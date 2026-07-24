@@ -1,0 +1,186 @@
+import { applyI18n, detectLang } from "./i18n.js";
+import { mountShell } from "./shell.js";
+
+function initNav() {
+  const header = document.getElementById("site-header");
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("primary-nav");
+
+  const onScroll = () => {
+    if (!header) return;
+    header.classList.toggle("is-scrolled", window.scrollY > 12);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(open));
+      if (!open) closeMega();
+    });
+  }
+
+  initMegaMenu();
+}
+
+function closeMega() {
+  document.querySelectorAll("[data-mega]").forEach((item) => {
+    item.classList.remove("is-open");
+    const trigger = item.querySelector("[data-mega-trigger]");
+    const panel = item.querySelector("[data-mega-panel]");
+    if (trigger) trigger.setAttribute("aria-expanded", "false");
+    if (panel) panel.hidden = true;
+  });
+}
+
+function openMega(item) {
+  closeMega();
+  item.classList.add("is-open");
+  const trigger = item.querySelector("[data-mega-trigger]");
+  const panel = item.querySelector("[data-mega-panel]");
+  if (trigger) trigger.setAttribute("aria-expanded", "true");
+  if (panel) panel.hidden = false;
+}
+
+function initMegaMenu() {
+  const items = document.querySelectorAll("[data-mega]");
+  if (!items.length) return;
+
+  const isMobile = () => window.matchMedia("(max-width: 960px)").matches;
+  let closeTimer = null;
+
+  const cancelClose = () => {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+  };
+
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer = setTimeout(() => {
+      if (!isMobile()) closeMega();
+    }, 180);
+  };
+
+  items.forEach((item) => {
+    const trigger = item.querySelector("[data-mega-trigger]");
+    const panel = item.querySelector("[data-mega-panel]");
+    if (!trigger || !panel) return;
+
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      cancelClose();
+      const open = item.classList.contains("is-open");
+      if (open) closeMega();
+      else openMega(item);
+    });
+
+    // Desktop: keep open while pointer is on trigger OR panel (bridged by CSS)
+    item.addEventListener("mouseenter", () => {
+      if (isMobile()) return;
+      cancelClose();
+      openMega(item);
+    });
+    item.addEventListener("mouseleave", () => {
+      if (isMobile()) return;
+      scheduleClose();
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("[data-mega]")) {
+      cancelClose();
+      closeMega();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      cancelClose();
+      closeMega();
+    }
+  });
+
+  // Close mobile drawer when navigating
+  const nav = document.getElementById("primary-nav");
+  const toggle = document.getElementById("menu-toggle");
+  document.querySelectorAll("#primary-nav a").forEach((a) => {
+    a.addEventListener("click", () => {
+      cancelClose();
+      if (nav) nav.classList.remove("is-open");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+      closeMega();
+    });
+  });
+}
+
+function initLang() {
+  let lang = detectLang();
+  applyI18n(lang);
+  document.querySelectorAll(".lang-switch button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      lang = btn.dataset.lang;
+      applyI18n(lang);
+      const url = new URL(location.href);
+      url.searchParams.set("lang", lang);
+      history.replaceState(null, "", url);
+    });
+  });
+}
+
+function initReveal() {
+  const els = document.querySelectorAll(".reveal");
+  if (!els.length) return;
+  if (!("IntersectionObserver" in window)) {
+    els.forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-visible");
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  );
+  els.forEach((el) => io.observe(el));
+}
+
+function initContactForm() {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = data.get("name") || "";
+    const email = data.get("email") || "";
+    const company = data.get("company") || "";
+    const message = data.get("message") || "";
+    const subject = encodeURIComponent(`[Robocore Contact] ${name} / ${company}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\n${message}`
+    );
+    window.location.href = `mailto:Info@robocore.ai?subject=${subject}&body=${body}`;
+  });
+}
+
+function boot() {
+  const page = document.body.dataset.page || "index.html";
+  mountShell(page);
+  initNav();
+  initLang();
+  initReveal();
+  initContactForm();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", boot);
+} else {
+  boot();
+}

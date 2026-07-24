@@ -1,0 +1,39 @@
+:root {
+  /* Robocore brand palette (from official Wix theme) */
+  --bg-dark: #141416;
+  --bg-elevated: #1b1c1e;
+  --bg-card: #222326;
+  --bg-soft: #27292d;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --text: #ffffff;
+  --text-soft: #a0a3a8;
+  --text-muted: #6b6f76;
+  --text-inverse: #141416;
+
+  --accent: #1df0a2;
+  --accent-dim: #13a06c;
+  --accent-glow: rgba(29, 240, 162, 0.22);
+  --blue: #116dff;
+  --blue-bright: #1862f7;
+  --steel: #2b5672;
+  --teal: #009490;
+  --coral: #fd6262;
+
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+  --font: "PingFang TC", "Noto Sans TC", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  --container: 1200px;
+  --header-h: 76px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: 0.25s var(--ease);
+}
