@@ -1,5 +1,9 @@
 /** Shared header & footer injection */
 
+// GitHub Pages lives under /repo-name/ — never hardcode root-absolute /assets/
+const BASE = import.meta.env.BASE_URL || "/";
+const asset = (path) => `${BASE}${String(path).replace(/^\//, "")}`;
+
 const SOCIALS = [
   { href: "https://www.facebook.com/robocoretechnology/", label: "FB" },
   { href: "https://www.instagram.com/robocoretechnology/", label: "IG" },
@@ -115,7 +119,7 @@ export function renderHeader(current = "index.html") {
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a class="logo" href="index.html" aria-label="Robocore">
-        <img src="/assets/logo/robocore-logo.png" alt="Robocore" width="160" height="42" />
+        <img src="${asset("assets/logo/robocore-logo.png")}" alt="Robocore" width="160" height="42" />
       </a>
       <nav class="nav" id="primary-nav" aria-label="Primary">
         ${productsMega(current)}
@@ -148,7 +152,7 @@ export function renderFooter() {
       <div class="footer-grid">
         <div class="footer-brand">
           <a class="logo" href="index.html">
-            <img src="/assets/logo/robocore-logo.png" alt="Robocore" width="140" height="36" />
+            <img src="${asset("assets/logo/robocore-logo.png")}" alt="Robocore" width="140" height="36" />
           </a>
           <p data-i18n="common.member" style="margin-top:1rem"></p>
           <p data-i18n="common.tagline"></p>
