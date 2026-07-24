@@ -119,7 +119,7 @@ export function renderHeader(current = "index.html") {
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a class="logo" href="index.html" aria-label="Robocore">
-        <img src="${asset("assets/logo/robocore-logo.png")}" alt="Robocore" width="160" height="42" />
+        <img src="${asset("assets/logo/robocore-logo.png")}" alt="Robocore" width="200" height="52" />
       </a>
       <nav class="nav" id="primary-nav" aria-label="Primary">
         ${productsMega(current)}
