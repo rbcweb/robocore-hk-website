@@ -217,6 +217,22 @@
   padding: 0.4rem;
 }
 
+/* Robocore solution icons — SVG already includes frame; keep clean */
+.sol-icon {
+  width: 88px;
+  height: 88px;
+  padding: 0;
+  background: transparent;
+  border-radius: 18px;
+  transition: transform var(--transition), filter var(--transition);
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+.card:hover .sol-icon {
+  transform: scale(1.04);
+  filter: drop-shadow(0 8px 18px rgba(29, 240, 162, 0.18));
+}
+
 .card h3 {
   font-size: 1.15rem;
   margin-bottom: 0.5rem;
