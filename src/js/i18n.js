@@ -39,10 +39,10 @@ export const dict = {
   "common.member": { zh: "東興集團成員", en: "Member of Tung Hing Group" },
   "common.tagline": { zh: "您最好的機械人解決方案", en: "Your Best Robotic Solutions" },
   "common.follow": { zh: "關注我們", en: "Follow Us" },
-  "common.company": { zh: "博歌科技有限公司", en: "Robocore Limited" },
+  "common.company": { zh: "博歌科技有限公司", en: "Robocore Technology Limited" },
   "common.rights": {
     zh: "© 2026 博歌科技有限公司 版權所有",
-    en: "© 2026 Robocore Limited. All rights reserved.",
+    en: "© 2026 Robocore Technology Limited. All rights reserved.",
   },
   "common.address": {
     zh: "九龍灣臨興街 21 號美羅中心二期 17 樓 1721 室",
