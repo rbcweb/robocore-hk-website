@@ -122,9 +122,11 @@ export const dict = {
     zh: "您最好的機器人解決方案——自有產品線與合作夥伴生態。",
     en: "Your best robotic solutions—our portfolio and partner ecosystem.",
   },
-  "products.temiGroup": { zh: "TEMI FAMILY", en: "TEMI FAMILY" },
+  "products.temiGroup": { zh: "temi 系列", en: "temi Series" },
+  "products.puduGroup": { zh: "Pudu 系列", en: "Pudu Series" },
   "products.ownGroup": { zh: "自有與模組", en: "Platforms & Modules" },
   "products.partnerGroup": { zh: "合作夥伴產品", en: "Partner Products" },
+  "products.viewPuduAll": { zh: "查看全部 Pudu", en: "View all Pudu" },
 
   // Product blurbs
   "prod.temiv3.tag": { zh: "智能服務機器人", en: "Smart Service Robot" },
