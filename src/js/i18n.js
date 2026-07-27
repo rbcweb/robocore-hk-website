@@ -88,8 +88,8 @@ export const dict = {
   },
   "home.pillar2Title": { zh: "temi 系列", en: "temi Series" },
   "home.pillar2Desc": {
-    zh: "服務、配送、巡邏與廣告——temi v3、GO、GO PRO、Blackjack、Fourcast 等完整產品線。",
-    en: "Service, delivery, patrol and advertising—temi v3, GO, GO PRO, Blackjack, Fourcast and more.",
+    zh: "temi V3、temi GO、temi GO PRO、Blackjack、Fourcast 分別提供配送、巡邏及廣告等服務。",
+    en: "temi V3, temi GO, temi GO PRO, Blackjack and Fourcast provide delivery, patrol and advertising services.",
   },
   "home.pillar3Title": { zh: "Pudu 系列", en: "Pudu Series" },
   "home.pillar3Desc": {
