@@ -47,7 +47,7 @@ const PRODUCT_NAV = {
   ],
   extras: [
     { name: "ZPINE", href: "zpine.html", typeKey: "nav.type.multiPlatform" },
-    { nameKey: "lift.title", href: "liftmodule.html" },
+    { nameKey: "lift.title", href: "liftmodule.html", typeKey: "nav.type.lift" },
   ],
 };
 

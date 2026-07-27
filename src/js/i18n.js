@@ -162,7 +162,7 @@ export const dict = {
     zh: "跨品牌機械人通用平台，以專利芯片組對接，集中監控並指派任務。",
     en: "Universal multi-brand robot platform with patented chipset—monitor fleets and assign missions centrally.",
   },
-  "prod.lift.tag": { zh: "電梯模組", en: "Lift Module" },
+  "prod.lift.tag": { zh: "電梯模組", en: "Elevator integration system" },
   "prod.lift.desc": {
     zh: "配合機械人跨樓層運行的電梯整合模組，拓展垂直移動能力。",
     en: "Elevator integration module that enables robots to operate across floors.",
