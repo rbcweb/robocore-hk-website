@@ -226,9 +226,9 @@ export const dict = {
     en: "ZPINE is a universal multi-robot platform for all brands. Robots managed in any language or system can connect via our patented chipset. Admins monitor fleets and assign missions—e.g. temi as warehouse guide and patrol, while another robot handles disinfection.",
   },
 
-  "lift.title": { zh: "Lift Module", en: "Lift Module" },
+  "lift.title": { zh: "電梯模組", en: "Lift Module" },
   "lift.body": {
-    zh: "Lift Module 讓服務機械人能夠與電梯系統整合，實現跨樓層自主運行，拓展樓宇內的垂直服務覆蓋。",
+    zh: "電梯模組讓服務機械人能夠與電梯系統整合，實現跨樓層自主運行，拓展樓宇內的垂直服務覆蓋。",
     en: "The Lift Module integrates service robots with elevator systems for multi-floor autonomous operation and vertical coverage in buildings.",
   },
 
@@ -249,7 +249,7 @@ export const dict = {
   "pudu.cat.delivery": { zh: "配送與餐飲服務", en: "Delivery & F&B Service" },
   "pudu.cat.cleaning": { zh: "清潔與消毒", en: "Cleaning & Disinfection" },
 
-  "pudu.bellabot.tag": { zh: "高端送餐機械人", en: "Premium Food Delivery Robot" },
+  "pudu.bellabot.tag": { zh: "高端送餐機械人", en: "Open-tray delivery" },
   "pudu.bellabot.desc": {
     zh: "為高端餐飲打造的送餐體驗，結合穩定配送與親切互動形象，適合正餐餐廳、酒店宴會與需要品牌感的前廳服務。",
     en: "A premium dining delivery experience combining reliable service with an engaging presence—ideal for fine dining, hotel banquets and brand-forward front-of-house service.",
@@ -258,7 +258,7 @@ export const dict = {
   "pudu.bellabot.c2": { zh: "互動體驗", en: "Guest engagement" },
   "pudu.bellabot.c3": { zh: "品牌形象", en: "Brand presence" },
 
-  "pudu.pudubot.tag": { zh: "智能送餐機械人", en: "Smart Food Delivery Robot" },
+  "pudu.pudubot.tag": { zh: "智能送餐機械人", en: "Open-tray delivery" },
   "pudu.pudubot.desc": {
     zh: "普渡主力智能送餐方案，自主導航往返廚房與客席，減輕侍應跑動負擔，適合中式／西式餐廳、火鍋、茶飲與美食廣場等高頻送餐場景。",
     en: "Pudu’s flagship smart food delivery robot. Autonomous runs between kitchen and tables reduce staff walking—suited to Chinese and Western restaurants, hot pot, cafés and food courts with high delivery volume.",
@@ -267,7 +267,7 @@ export const dict = {
   "pudu.pudubot.c2": { zh: "高頻送餐", en: "High-frequency runs" },
   "pudu.pudubot.c3": { zh: "多場景", en: "Multi-scenario" },
 
-  "pudu.holabot.tag": { zh: "高端配送機械人", en: "Premium Delivery Robot" },
+  "pudu.holabot.tag": { zh: "高端配送機械人", en: "Semi open-tray delivery" },
   "pudu.holabot.desc": {
     zh: "面向更高負載與專業配送需求的高端機型，支援托盤／艙體配送，適合需要穩妥運送餐飲、物料或備品的商業場所。",
     en: "A premium model for higher capacity and professional delivery, supporting tray or compartment transport for food, supplies or amenities in commercial venues.",
@@ -276,7 +276,7 @@ export const dict = {
   "pudu.holabot.c2": { zh: "穩定載運", en: "Stable payload" },
   "pudu.holabot.c3": { zh: "商業場所", en: "Commercial venues" },
 
-  "pudu.flashbot.tag": { zh: "樓宇配送機械人", en: "Building Delivery Robot" },
+  "pudu.flashbot.tag": { zh: "樓宇配送機械人", en: "Quad-door delivery" },
   "pudu.flashbot.desc": {
     zh: "專為樓宇場景設計的配送機械人，適用酒店客房送物、寫字樓文件／備品、商場後勤等跨區域、跨樓層配送流程。",
     en: "Built for multi-zone building logistics—hotel amenity delivery, office documents and supplies, and mall back-of-house runs across floors and areas.",
@@ -285,7 +285,7 @@ export const dict = {
   "pudu.flashbot.c2": { zh: "跨層配送", en: "Multi-floor logistics" },
   "pudu.flashbot.c3": { zh: "後勤支援", en: "Back-of-house" },
 
-  "pudu.cc1.tag": { zh: "掃地洗地機械人", en: "Sweep & Scrub Robot" },
+  "pudu.cc1.tag": { zh: "掃地洗地機械人", en: "4-in-1 floor cleaning" },
   "pudu.cc1.desc": {
     zh: "商用掃地洗地方案，適合商場、寫字樓、醫院走廊等需要持續地面保潔的公共空間，減少人手重複勞動。",
     en: "Commercial sweep-and-scrub solution for malls, offices and hospital corridors that need continuous floor care with less manual labour.",
@@ -294,7 +294,7 @@ export const dict = {
   "pudu.cc1.c2": { zh: "公共空間", en: "Public spaces" },
   "pudu.cc1.c3": { zh: "減省人手", en: "Labour saving" },
 
-  "pudu.mt1.tag": { zh: "大型垃圾處理", en: "Large Waste Handling" },
+  "pudu.mt1.tag": { zh: "大型垃圾處理", en: "Large waste cleaning" },
   "pudu.mt1.desc": {
     zh: "針對大型垃圾／大件廢棄物處理場景，協助商業或後勤空間處理體積較大的垃圾收集與搬運需求。",
     en: "Built for large / bulk waste scenarios—helping commercial and back-of-house spaces collect and move larger refuse.",
@@ -303,7 +303,7 @@ export const dict = {
   "pudu.mt1.c2": { zh: "後勤場景", en: "Back-of-house" },
   "pudu.mt1.c3": { zh: "商業空間", en: "Commercial spaces" },
 
-  "pudu.sh1.tag": { zh: "智慧直立式洗地機", en: "Smart Upright Floor Scrubber" },
+  "pudu.sh1.tag": { zh: "智慧直立式洗地機", en: "Upright scrubber" },
   "pudu.sh1.desc": {
     zh: "直立式智慧洗地設計，靈活應對走廊、大堂、通道等狹長或人流區域，補足大型清潔機難以覆蓋的細節動線。",
     en: "A smart upright scrubber for corridors, lobbies and high-traffic paths—complementing larger machines where agility and manoeuvrability matter.",
@@ -312,7 +312,7 @@ export const dict = {
   "pudu.sh1.c2": { zh: "走廊大堂", en: "Corridors & lobbies" },
   "pudu.sh1.c3": { zh: "智慧洗地", en: "Smart scrubbing" },
 
-  "pudu.puductor.tag": { zh: "紫外線清潔機械人", en: "UV Disinfection Robot" },
+  "pudu.puductor.tag": { zh: "紫外線清潔機械人", en: "UV disinfection" },
   "pudu.puductor.desc": {
     zh: "Puductor 2 以紫外線消毒為核心，可在離峰時段對室內空間進行自動化消殺，適合醫療、教育、酒店與對衛生要求較高的場所。",
     en: "Puductor 2 focuses on UV disinfection for automated sanitising of indoor spaces during off-peak hours—suited to healthcare, education, hospitality and hygiene-critical sites.",

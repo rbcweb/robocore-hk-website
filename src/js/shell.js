@@ -47,13 +47,16 @@ const PRODUCT_NAV = {
   ],
   extras: [
     { name: "ZPINE", href: "zpine.html", typeKey: "nav.type.multiPlatform" },
-    { name: "Lift Module", href: "liftmodule.html", typeKey: "nav.type.lift" },
+    { nameKey: "lift.title", href: "liftmodule.html" },
   ],
 };
 
 function isActive(current, href) {
-  const base = href.split("#")[0];
-  return current === base || current === href;
+  const [base, hash] = href.split("#");
+  if (current !== base && current !== href) return false;
+  if (!hash) return true;
+  const currentHash = (typeof location !== "undefined" ? location.hash : "").replace(/^#/, "");
+  return currentHash === hash;
 }
 
 function navLink(href, key, current) {
@@ -80,10 +83,16 @@ function productsMega(current) {
     .join("");
 
   const extras = PRODUCT_NAV.extras
-    .map(
-      (e) =>
-        `<a class="mega-extra" href="${e.href}"><span>${e.name}</span><span class="mega-extra-type" data-i18n="${e.typeKey}"></span></a>`
-    )
+    .map((e) => {
+      const name = e.nameKey
+        ? `<span data-i18n="${e.nameKey}"></span>`
+        : `<span>${e.name}</span>`;
+      const type = e.typeKey
+        ? `<span class="mega-extra-type" data-i18n="${e.typeKey}"></span>`
+        : "";
+      const active = isActive(current, e.href) ? " is-active" : "";
+      return `<a class="mega-extra${active}" href="${e.href}">${name}${type}</a>`;
+    })
     .join("");
 
   return `

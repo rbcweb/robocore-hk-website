@@ -1,6 +1,20 @@
 import { applyI18n, detectLang } from "./i18n.js";
 import { mountShell } from "./shell.js";
 
+function syncMegaActiveFromHash() {
+  const page = document.body.dataset.page || "";
+  document.querySelectorAll(".mega-model[href], .mega-extra[href]").forEach((a) => {
+    const href = a.getAttribute("href") || "";
+    const [base, hash] = href.split("#");
+    let active = false;
+    if (page === base || page === href) {
+      if (!hash) active = true;
+      else active = location.hash.replace(/^#/, "") === hash;
+    }
+    a.classList.toggle("is-active", active);
+  });
+}
+
 function initNav() {
   const header = document.getElementById("site-header");
   const toggle = document.getElementById("menu-toggle");
@@ -22,6 +36,7 @@ function initNav() {
   }
 
   initMegaMenu();
+  window.addEventListener("hashchange", syncMegaActiveFromHash);
 }
 
 function closeMega() {
