@@ -34,7 +34,7 @@ const PRODUCT_NAV = {
       overviewHref: "pudu.html",
       overviewKey: "nav.exploreSeries",
       models: [
-        { name: "PuduBot", href: "pudu.html#pudubot", typeKey: "nav.type.foodDelivery" },
+        { name: "PuduBot 2", href: "pudu.html#pudubot", typeKey: "nav.type.foodDelivery" },
         { name: "BellaBot", href: "pudu.html#bellabot", typeKey: "nav.type.premiumFood" },
         { name: "HolaBot", href: "pudu.html#holabot", typeKey: "nav.type.premiumDelivery" },
         { name: "FlashBot", href: "pudu.html#flashbot", typeKey: "nav.type.buildingDelivery" },
@@ -48,7 +48,6 @@ const PRODUCT_NAV = {
   extras: [
     { name: "ZPINE", href: "zpine.html", typeKey: "nav.type.multiPlatform" },
     { name: "Lift Module", href: "liftmodule.html", typeKey: "nav.type.lift" },
-    { name: "Yunji", href: "yunji.html", typeKey: "nav.type.indoorService" },
   ],
 };
 
@@ -91,7 +90,7 @@ function productsMega(current) {
     <div class="nav-item nav-item-mega" data-mega>
       <button
         type="button"
-        class="nav-link nav-mega-trigger${current === "products.html" || current.startsWith("temi") || current === "pudu.html" || current === "temifamily.html" || current === "zpine.html" || current === "liftmodule.html" || current === "yunji.html" || current === "blackjack.html" || current === "fourcast.html" ? " is-active" : ""}"
+        class="nav-link nav-mega-trigger${current === "products.html" || current.startsWith("temi") || current === "pudu.html" || current === "temifamily.html" || current === "zpine.html" || current === "liftmodule.html" || current === "blackjack.html" || current === "fourcast.html" ? " is-active" : ""}"
         aria-expanded="false"
         aria-controls="products-mega"
         data-mega-trigger

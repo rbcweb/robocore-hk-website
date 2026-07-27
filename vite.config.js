@@ -15,7 +15,6 @@ const pages = [
   'zpine',
   'liftmodule',
   'pudu',
-  'yunji',
   'news',
   'joinus',
   'contactus',

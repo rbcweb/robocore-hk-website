@@ -12,23 +12,22 @@ export const dict = {
   "nav.brand.pudu": { zh: "Pudu 系列", en: "Pudu" },
   "nav.exploreSeries": { zh: "系列總覽", en: "Explore the series" },
   "nav.platforms": { zh: "平台與模組", en: "Platforms & modules" },
-  "nav.type.service": { zh: "服務機械人", en: "Service robot" },
+  "nav.type.service": { zh: "服務機械人", en: "Multi-purpose smart ambassador" },
   "nav.type.chassis": { zh: "導航底盤", en: "Navigation chassis" },
   "nav.type.delivery": { zh: "配送機械人", en: "Delivery robot" },
-  "nav.type.quadDelivery": { zh: "四門配送", en: "Quad-door delivery" },
+  "nav.type.quadDelivery": { zh: "四門配送", en: "Open-tray delivery" },
   "nav.type.patrol": { zh: "巡邏巡檢", en: "Patrol & inspection" },
   "nav.type.ad": { zh: "流動廣告", en: "Mobile advertising" },
-  "nav.type.foodDelivery": { zh: "智能送餐", en: "Smart food delivery" },
-  "nav.type.premiumFood": { zh: "高端送餐", en: "Premium food delivery" },
-  "nav.type.premiumDelivery": { zh: "高端配送", en: "Premium delivery" },
-  "nav.type.buildingDelivery": { zh: "樓宇配送", en: "Building delivery" },
-  "nav.type.sweepScrub": { zh: "掃地洗地", en: "Sweep & scrub" },
-  "nav.type.bulkWaste": { zh: "大型垃圾", en: "Large waste" },
+  "nav.type.foodDelivery": { zh: "智能送餐", en: "Open-tray delivery" },
+  "nav.type.premiumFood": { zh: "高端送餐", en: "Open-tray delivery" },
+  "nav.type.premiumDelivery": { zh: "高端配送", en: "Semi open-tray delivery" },
+  "nav.type.buildingDelivery": { zh: "樓宇配送", en: "Quad-door delivery" },
+  "nav.type.sweepScrub": { zh: "掃地洗地", en: "4-in-1 floor cleaning" },
+  "nav.type.bulkWaste": { zh: "大型垃圾", en: "Large waste cleaning" },
   "nav.type.uprightScrub": { zh: "直立洗地", en: "Upright scrubber" },
   "nav.type.uv": { zh: "UV 消毒", en: "UV disinfection" },
   "nav.type.multiPlatform": { zh: "多機械人平台", en: "Multi-robot platform" },
-  "nav.type.lift": { zh: "電梯模組", en: "Lift module" },
-  "nav.type.indoorService": { zh: "室內服務", en: "Indoor service" },
+  "nav.type.lift": { zh: "電梯模組", en: "Elevator integration system" },
 
   // Common
   "common.learnMore": { zh: "了解詳情", en: "Learn More" },
@@ -125,7 +124,6 @@ export const dict = {
   "products.temiGroup": { zh: "temi 系列", en: "temi Series" },
   "products.puduGroup": { zh: "Pudu 系列", en: "Pudu Series" },
   "products.ownGroup": { zh: "自有與模組", en: "Platforms & Modules" },
-  "products.partnerGroup": { zh: "合作夥伴產品", en: "Partner Products" },
   "products.viewPuduAll": { zh: "查看全部 Pudu", en: "View all Pudu" },
 
   // Product blurbs
@@ -174,12 +172,6 @@ export const dict = {
     zh: "普渡科技——PuduBot／BellaBot 送餐配送，CC1 掃地洗地、MT1 大型垃圾、SH1 洗地與消毒等完整產品線。",
     en: "Pudu Robotics—PuduBot & BellaBot delivery, CC1 sweep & scrub, MT1 large waste, SH1 scrubbing and disinfection.",
   },
-  "prod.yunji.tag": { zh: "室內服務機械人", en: "Indoor Service Robots" },
-  "prod.yunji.desc": {
-    zh: "雲迹科技——室內定位導航與智能移動，為酒店與樓宇等場景提供方案。",
-    en: "Yunji Technology—indoor positioning, navigation and intelligent mobility for hotels and buildings.",
-  },
-
   // Temi v3 extras
   "temiv3.title": { zh: "temi Robot V3", en: "temi Robot V3" },
   "temiv3.subtitle": { zh: "智能機械人助手", en: "Intelligent Robot Assistant" },
@@ -338,12 +330,6 @@ export const dict = {
     en: "Robocore can help with selection, demos and deployment for F&B, hotels, buildings or cleaning needs.",
   },
   "pudu.backProducts": { zh: "返回智能產品", en: "Back to Products" },
-
-  "yunji.title": { zh: "雲迹科技", en: "Yunji Technology" },
-  "yunji.body": {
-    zh: "北京雲迹科技有限公司成立於 2014 年，憑藉室內定位導航、機械人智能移動與大數據處理能力，為企業、政府機構、互聯網公司與社區服務等場景提供智能解決方案。",
-    en: "Founded in 2014, Yunji Technology delivers intelligent solutions with expertise in indoor positioning, robot mobility and big data—serving enterprises, government, internet companies and community services.",
-  },
 
   // Solutions
   "solutions.title": { zh: "智能方案", en: "Smart Solutions" },
