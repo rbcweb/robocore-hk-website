@@ -12,9 +12,9 @@ export const dict = {
   "nav.brand.pudu": { zh: "Pudu 系列", en: "Pudu" },
   "nav.exploreSeries": { zh: "系列總覽", en: "Explore the series" },
   "nav.platforms": { zh: "平台與模組", en: "Platforms & modules" },
-  "nav.type.service": { zh: "服務機器人", en: "Service robot" },
+  "nav.type.service": { zh: "服務機械人", en: "Service robot" },
   "nav.type.chassis": { zh: "導航底盤", en: "Navigation chassis" },
-  "nav.type.delivery": { zh: "配送機器人", en: "Delivery robot" },
+  "nav.type.delivery": { zh: "配送機械人", en: "Delivery robot" },
   "nav.type.quadDelivery": { zh: "四門配送", en: "Quad-door delivery" },
   "nav.type.patrol": { zh: "巡邏巡檢", en: "Patrol & inspection" },
   "nav.type.ad": { zh: "流動廣告", en: "Mobile advertising" },
@@ -26,7 +26,7 @@ export const dict = {
   "nav.type.bulkWaste": { zh: "大型垃圾", en: "Large waste" },
   "nav.type.uprightScrub": { zh: "直立洗地", en: "Upright scrubber" },
   "nav.type.uv": { zh: "UV 消毒", en: "UV disinfection" },
-  "nav.type.multiPlatform": { zh: "多機器人平台", en: "Multi-robot platform" },
+  "nav.type.multiPlatform": { zh: "多機械人平台", en: "Multi-robot platform" },
   "nav.type.lift": { zh: "電梯模組", en: "Lift module" },
   "nav.type.indoorService": { zh: "室內服務", en: "Indoor service" },
 
@@ -38,7 +38,7 @@ export const dict = {
   "common.home": { zh: "首頁", en: "Home" },
   "common.send": { zh: "傳送訊息", en: "Send Message" },
   "common.member": { zh: "東興集團成員", en: "Member of Tung Hing Group" },
-  "common.tagline": { zh: "您最好的機器人解決方案", en: "Your Best Robotic Solutions" },
+  "common.tagline": { zh: "您最好的機械人解決方案", en: "Your Best Robotic Solutions" },
   "common.follow": { zh: "關注我們", en: "Follow Us" },
   "common.company": { zh: "博歌科技有限公司", en: "Robocore Limited" },
   "common.rights": {
@@ -57,20 +57,20 @@ export const dict = {
 
   // Home
   "home.heroTitle": {
-    zh: "為機器人平台\n創新標準",
+    zh: "為機械人平台\n創新標準",
     en: "The New Standard\nin Robotic Platforms",
   },
   "home.heroLead": {
-    zh: "博歌（Robocore）是總部位於香港的專業機器人綜合解決方案供應商，以 temi 與 Pudu 等智能機器人產品線，協助企業升級營運。",
+    zh: "博歌（Robocore）是總部位於香港的專業機械人綜合解決方案供應商，以 temi 與 Pudu 等智能機械人產品線，協助企業升級營運。",
     en: "Robocore is a Hong Kong–headquartered provider of comprehensive robotics solutions—balancing temi and Pudu product lines to help enterprises upgrade operations.",
   },
   "home.aboutKicker": { zh: "關於我們", en: "About Us" },
   "home.aboutTitle": {
-    zh: "讓機器人將您的業務\n推向更高的領域",
+    zh: "讓機械人將您的業務\n推向更高的領域",
     en: "Let Your Robots Take Your Business\nto New Heights",
   },
   "home.aboutP1": {
-    zh: "博歌（Robocore）是一家專業的機器人綜合解決方案供應商，總部位於香港。我們同時提供 temi 智能服務機器人（自主導航、智能跟隨、遠程視頻與開放 SDK）與 Pudu 商用服務機器人（送餐配送、清潔與消毒），按場景為客戶選型與落地。",
+    zh: "博歌（Robocore）是一家專業的機械人綜合解決方案供應商，總部位於香港。我們同時提供 temi 智能服務機械人（自主導航、智能跟隨、遠程視頻與開放 SDK）與 Pudu 商用服務機械人（送餐配送、清潔與消毒），按場景為客戶選型與落地。",
     en: "Robocore is a professional provider of comprehensive robotics solutions, headquartered in Hong Kong. We offer both temi intelligent service robots (autonomous navigation, follow, remote video and open SDK) and Pudu commercial robots (food delivery, cleaning and disinfection)—selecting and deploying the right fit for each scenario.",
   },
   "home.aboutP2": {
@@ -83,7 +83,7 @@ export const dict = {
   "home.pillarsTitle": { zh: "我們能為您做什麼", en: "What We Deliver" },
   "home.pillar1Title": { zh: "綜合智能解決方案", en: "Comprehensive Solutions" },
   "home.pillar1Desc": {
-    zh: "醫療、酒店、零售、樓宇、餐飲等 12 個行業場景，量身打造機器人應用。",
+    zh: "醫療、酒店、零售、樓宇、餐飲等 12 個行業場景，量身打造機械人應用。",
     en: "Tailored robotics for 12 industries—healthcare, hospitality, retail, buildings, F&B and more.",
   },
   "home.pillar2Title": { zh: "temi 系列", en: "temi Series" },
@@ -111,7 +111,7 @@ export const dict = {
     en: "Unprecedented Speed. Impeccable Reliability.",
   },
   "home.ctaSub": {
-    zh: "探索適合您行業的智能機器人方案。",
+    zh: "探索適合您行業的智能機械人方案。",
     en: "Discover intelligent robot solutions for your industry.",
   },
   "home.ctaBtn": { zh: "智能方案", en: "Our Solutions" },
@@ -119,7 +119,7 @@ export const dict = {
   // Products page
   "products.title": { zh: "我們的智能產品", en: "Our Smart Products" },
   "products.sub": {
-    zh: "您最好的機器人解決方案——自有產品線與合作夥伴生態。",
+    zh: "您最好的機械人解決方案——自有產品線與合作夥伴生態。",
     en: "Your best robotic solutions—our portfolio and partner ecosystem.",
   },
   "products.temiGroup": { zh: "temi 系列", en: "temi Series" },
@@ -129,52 +129,52 @@ export const dict = {
   "products.viewPuduAll": { zh: "查看全部 Pudu", en: "View all Pudu" },
 
   // Product blurbs
-  "prod.temiv3.tag": { zh: "智能服務機器人", en: "Smart Service Robot" },
+  "prod.temiv3.tag": { zh: "智能服務機械人", en: "Smart Service Robot" },
   "prod.temiv3.desc": {
     zh: "室內完全自主導航、智能避障、路徑規劃、遠程視頻與 AI 跟隨，開放 SDK 打造您的專屬應用。",
     en: "Full indoor autonomy, obstacle avoidance, path planning, remote video and AI follow—with open SDK for your apps.",
   },
   "prod.platform.tag": { zh: "智能底盤平台", en: "Intelligent Platform" },
   "prod.platform.desc": {
-    zh: "temi 家族機器人底盤，開放 SDK，自由組合設備與配件，實現客製化方案。",
+    zh: "temi 家族機械人底盤，開放 SDK，自由組合設備與配件，實現客製化方案。",
     en: "Robotic chassis from the temi family with open SDK—combine devices and accessories for custom solutions.",
   },
-  "prod.go.tag": { zh: "智能配送機器人", en: "Delivery Robot" },
+  "prod.go.tag": { zh: "智能配送機械人", en: "Delivery Robot" },
   "prod.go.desc": {
     zh: "適用餐廳、美食廣場與零售的食品飲料與托盤配送，平板、語音與 temi Center 控制。",
     en: "Ideal for F&B and open-tray delivery in restaurants, food courts and retail—tablet, voice and temi Center control.",
   },
-  "prod.gopro.tag": { zh: "四門配送機器人", en: "Quad-Door Delivery Robot" },
+  "prod.gopro.tag": { zh: "四門配送機械人", en: "Quad-Door Delivery Robot" },
   "prod.gopro.desc": {
     zh: "temi GO 高級四門版本，跨樓層配送；獨立電門與可拆隔板，點對點自主運送。",
     en: "Premium four-door temi GO for multi-floor delivery—independent doors, removable partitions, A-to-B autonomy.",
   },
-  "prod.blackjack.tag": { zh: "巡邏與巡檢機器人", en: "Security & Inspection Robot" },
+  "prod.blackjack.tag": { zh: "巡邏與巡檢機械人", en: "Security & Inspection Robot" },
   "prod.blackjack.desc": {
-    zh: "整合 temi 底盤的偵測巡邏機器人，可調高度感測器、振動加速度計與 4K/360° 雙攝影機。",
+    zh: "整合 temi 底盤的偵測巡邏機械人，可調高度感測器、振動加速度計與 4K/360° 雙攝影機。",
     en: "Patrol robot on temi chassis with height-adjustable sensors, vibration accelerometer and dual 4K/360° cameras.",
   },
-  "prod.fourcast.tag": { zh: "流動廣告機器人", en: "Mobile Advertising Robot" },
+  "prod.fourcast.tag": { zh: "流動廣告機械人", en: "Mobile Advertising Robot" },
   "prod.fourcast.desc": {
     zh: "四面 38.8 吋螢幕、投影、深度相機與 LiDAR，帶來創新流動廣告體驗。",
     en: "Four-sided 38.8\" displays, projector, depth camera and LiDAR for advanced mobile advertising.",
   },
-  "prod.zpine.tag": { zh: "多機器人平台", en: "Multi-Robot Platform" },
+  "prod.zpine.tag": { zh: "多機械人平台", en: "Multi-Robot Platform" },
   "prod.zpine.desc": {
-    zh: "跨品牌機器人通用平台，以專利芯片組對接，集中監控並指派任務。",
+    zh: "跨品牌機械人通用平台，以專利芯片組對接，集中監控並指派任務。",
     en: "Universal multi-brand robot platform with patented chipset—monitor fleets and assign missions centrally.",
   },
   "prod.lift.tag": { zh: "電梯模組", en: "Lift Module" },
   "prod.lift.desc": {
-    zh: "配合機器人跨樓層運行的電梯整合模組，拓展垂直移動能力。",
+    zh: "配合機械人跨樓層運行的電梯整合模組，拓展垂直移動能力。",
     en: "Elevator integration module that enables robots to operate across floors.",
   },
-  "prod.pudu.tag": { zh: "商用服務機器人", en: "Commercial Service Robots" },
+  "prod.pudu.tag": { zh: "商用服務機械人", en: "Commercial Service Robots" },
   "prod.pudu.desc": {
     zh: "普渡科技——PuduBot／BellaBot 送餐配送，CC1 掃地洗地、MT1 大型垃圾、SH1 洗地與消毒等完整產品線。",
     en: "Pudu Robotics—PuduBot & BellaBot delivery, CC1 sweep & scrub, MT1 large waste, SH1 scrubbing and disinfection.",
   },
-  "prod.yunji.tag": { zh: "室內服務機器人", en: "Indoor Service Robots" },
+  "prod.yunji.tag": { zh: "室內服務機械人", en: "Indoor Service Robots" },
   "prod.yunji.desc": {
     zh: "雲迹科技——室內定位導航與智能移動，為酒店與樓宇等場景提供方案。",
     en: "Yunji Technology—indoor positioning, navigation and intelligent mobility for hotels and buildings.",
@@ -199,13 +199,13 @@ export const dict = {
 
   "platform.title": { zh: "temi Platform", en: "temi Platform" },
   "platform.body": {
-    zh: "Temi Platform 是 temi 家族的機器人底盤，配備完全開放的 SDK 平台，可讓您為業務編寫自己的應用程式。自由組合設備或配件以實現客製化解決方案。由 temi Center 平台支援並與 temi 應用程式相容。",
+    zh: "Temi Platform 是 temi 家族的機械人底盤，配備完全開放的 SDK 平台，可讓您為業務編寫自己的應用程式。自由組合設備或配件以實現客製化解決方案。由 temi Center 平台支援並與 temi 應用程式相容。",
     en: "Temi Platform is the robotic chassis of the temi family with a fully open SDK. Freely combine devices or accessories for custom solutions. Supported by temi Center and compatible with the temi app.",
   },
 
   "go.title": { zh: "temi GO", en: "temi GO" },
   "go.body": {
-    zh: "Temi GO 是來自 temi 家族的智能配送機器人，配備完全開放的 SDK 平台。餐廳、美食廣場、零售店等場所運行的食品飲料和開放式托盤的完美解決方案。由平板、語音和 temi 中心平台控制。",
+    zh: "Temi GO 是來自 temi 家族的智能配送機械人，配備完全開放的 SDK 平台。餐廳、美食廣場、零售店等場所運行的食品飲料和開放式托盤的完美解決方案。由平板、語音和 temi 中心平台控制。",
     en: "Temi GO is an intelligent delivery robot from the temi family with a fully open SDK. Perfect for food, beverage and open-tray delivery in restaurants, food courts and retail—controlled by tablet, voice and temi Center.",
   },
 
@@ -217,32 +217,32 @@ export const dict = {
 
   "blackjack.title": { zh: "Blackjack", en: "Blackjack" },
   "blackjack.body": {
-    zh: "Robocore Blackjack 是整合 temi 底盤的偵測及巡邏機器人，配備可調節高度的感測器、振動加速度計和內建 4K/360° 雙攝影機系統。機器人可以在電梯巡檢、物業管理、保全巡邏等多種場景下自動工作。",
+    zh: "Robocore Blackjack 是整合 temi 底盤的偵測及巡邏機械人，配備可調節高度的感測器、振動加速度計和內建 4K/360° 雙攝影機系統。機械人可以在電梯巡檢、物業管理、保全巡邏等多種場景下自動工作。",
     en: "Robocore Blackjack is a detection and patrol robot on the temi chassis, with height-adjustable sensors, a vibration accelerometer and dual built-in 4K/360° cameras. Ideal for elevator inspection, property management and security patrols.",
   },
 
   "fourcast.title": { zh: "Fourcast", en: "Fourcast" },
   "fourcast.body": {
-    zh: "Robocore Fourcast 是整合 temi 底盤的流動廣告機器人，具有高性能自主導航能力。整合四邊 38.8 吋螢幕、投影機、深度攝影機、光達、懸崖感應器和攝影機，為客戶提供創新先進的廣告效果體驗。",
+    zh: "Robocore Fourcast 是整合 temi 底盤的流動廣告機械人，具有高性能自主導航能力。整合四邊 38.8 吋螢幕、投影機、深度攝影機、光達、懸崖感應器和攝影機，為客戶提供創新先進的廣告效果體驗。",
     en: "Robocore Fourcast is a mobile advertising robot on the temi chassis with high-performance autonomous navigation. It integrates four-sided 38.8\" screens, a projector, depth camera, LiDAR, cliff sensors and cameras for innovative advertising experiences.",
   },
 
   "zpine.title": { zh: "ZPINE", en: "ZPINE" },
-  "zpine.subtitle": { zh: "多機器人平台", en: "Multi-Robot Platform" },
+  "zpine.subtitle": { zh: "多機械人平台", en: "Multi-Robot Platform" },
   "zpine.body": {
-    zh: "ZPINE 綜合機器人平台為所有品牌機器人提供一個通用平台。使用任何語言設置或系統管理的機器人都可以與我們的專利芯片組對接，管理員可在平台上監控，並指派機械人執行不同範疇的工作——例如指派 temi 作為倉庫指導及巡邏員，並向另一機器人指示進行消毒清潔。",
+    zh: "ZPINE 綜合機械人平台為所有品牌機械人提供一個通用平台。使用任何語言設置或系統管理的機械人都可以與我們的專利芯片組對接，管理員可在平台上監控，並指派機械人執行不同範疇的工作——例如指派 temi 作為倉庫指導及巡邏員，並向另一機械人指示進行消毒清潔。",
     en: "ZPINE is a universal multi-robot platform for all brands. Robots managed in any language or system can connect via our patented chipset. Admins monitor fleets and assign missions—e.g. temi as warehouse guide and patrol, while another robot handles disinfection.",
   },
 
   "lift.title": { zh: "Lift Module", en: "Lift Module" },
   "lift.body": {
-    zh: "Lift Module 讓服務機器人能夠與電梯系統整合，實現跨樓層自主運行，拓展樓宇內的垂直服務覆蓋。",
+    zh: "Lift Module 讓服務機械人能夠與電梯系統整合，實現跨樓層自主運行，拓展樓宇內的垂直服務覆蓋。",
     en: "The Lift Module integrates service robots with elevator systems for multi-floor autonomous operation and vertical coverage in buildings.",
   },
 
   "pudu.title": { zh: "普渡科技", en: "Pudu Robotics" },
   "pudu.body": {
-    zh: "深圳市普渡科技有限公司成立於 2016 年，是研發、設計、生產及銷售商用服務機器人的國家級高新技術企業，總部位於深圳，在深圳和成都設有研發中心，全球擁有數百個服務網點。作為商用服務機器人領域的標杆企業，普渡機器人暢銷全球 60 多個國家和地區，廣泛應用於餐廳、醫院、學校、辦公樓、酒店、機場等場景。",
+    zh: "深圳市普渡科技有限公司成立於 2016 年，是研發、設計、生產及銷售商用服務機械人的國家級高新技術企業，總部位於深圳，在深圳和成都設有研發中心，全球擁有數百個服務網點。作為商用服務機械人領域的標杆企業，普渡機械人暢銷全球 60 多個國家和地區，廣泛應用於餐廳、醫院、學校、辦公樓、酒店、機場等場景。",
     en: "Founded in 2016 and headquartered in Shenzhen, Pudu Robotics designs, manufactures and sells commercial service robots, with R&D centres in Shenzhen and Chengdu and hundreds of service points worldwide. A leader in commercial service robotics, Pudu robots are used across 60+ countries in restaurants, hospitals, schools, offices, hotels and airports.",
   },
   "pudu.tech": {
@@ -251,13 +251,13 @@ export const dict = {
   },
   "pudu.lineupTitle": { zh: "產品系列", en: "Product Lineup" },
   "pudu.lineupSub": {
-    zh: "從智能送餐到樓宇配送，從四合一清潔到 UV 消毒——一站式商用服務機器人方案。",
+    zh: "從智能送餐到樓宇配送，從四合一清潔到 UV 消毒——一站式商用服務機械人方案。",
     en: "From smart food delivery to building logistics, 4-in-1 cleaning to UV disinfection—a full commercial service robot lineup.",
   },
   "pudu.cat.delivery": { zh: "配送與餐飲服務", en: "Delivery & F&B Service" },
   "pudu.cat.cleaning": { zh: "清潔與消毒", en: "Cleaning & Disinfection" },
 
-  "pudu.bellabot.tag": { zh: "高端送餐機器人", en: "Premium Food Delivery Robot" },
+  "pudu.bellabot.tag": { zh: "高端送餐機械人", en: "Premium Food Delivery Robot" },
   "pudu.bellabot.desc": {
     zh: "為高端餐飲打造的送餐體驗，結合穩定配送與親切互動形象，適合正餐餐廳、酒店宴會與需要品牌感的前廳服務。",
     en: "A premium dining delivery experience combining reliable service with an engaging presence—ideal for fine dining, hotel banquets and brand-forward front-of-house service.",
@@ -266,7 +266,7 @@ export const dict = {
   "pudu.bellabot.c2": { zh: "互動體驗", en: "Guest engagement" },
   "pudu.bellabot.c3": { zh: "品牌形象", en: "Brand presence" },
 
-  "pudu.pudubot.tag": { zh: "智能送餐機器人", en: "Smart Food Delivery Robot" },
+  "pudu.pudubot.tag": { zh: "智能送餐機械人", en: "Smart Food Delivery Robot" },
   "pudu.pudubot.desc": {
     zh: "普渡主力智能送餐方案，自主導航往返廚房與客席，減輕侍應跑動負擔，適合中式／西式餐廳、火鍋、茶飲與美食廣場等高頻送餐場景。",
     en: "Pudu’s flagship smart food delivery robot. Autonomous runs between kitchen and tables reduce staff walking—suited to Chinese and Western restaurants, hot pot, cafés and food courts with high delivery volume.",
@@ -275,7 +275,7 @@ export const dict = {
   "pudu.pudubot.c2": { zh: "高頻送餐", en: "High-frequency runs" },
   "pudu.pudubot.c3": { zh: "多場景", en: "Multi-scenario" },
 
-  "pudu.holabot.tag": { zh: "高端配送機器人", en: "Premium Delivery Robot" },
+  "pudu.holabot.tag": { zh: "高端配送機械人", en: "Premium Delivery Robot" },
   "pudu.holabot.desc": {
     zh: "面向更高負載與專業配送需求的高端機型，支援托盤／艙體配送，適合需要穩妥運送餐飲、物料或備品的商業場所。",
     en: "A premium model for higher capacity and professional delivery, supporting tray or compartment transport for food, supplies or amenities in commercial venues.",
@@ -284,16 +284,16 @@ export const dict = {
   "pudu.holabot.c2": { zh: "穩定載運", en: "Stable payload" },
   "pudu.holabot.c3": { zh: "商業場所", en: "Commercial venues" },
 
-  "pudu.flashbot.tag": { zh: "樓宇配送機器人", en: "Building Delivery Robot" },
+  "pudu.flashbot.tag": { zh: "樓宇配送機械人", en: "Building Delivery Robot" },
   "pudu.flashbot.desc": {
-    zh: "專為樓宇場景設計的配送機器人，適用酒店客房送物、寫字樓文件／備品、商場後勤等跨區域、跨樓層配送流程。",
+    zh: "專為樓宇場景設計的配送機械人，適用酒店客房送物、寫字樓文件／備品、商場後勤等跨區域、跨樓層配送流程。",
     en: "Built for multi-zone building logistics—hotel amenity delivery, office documents and supplies, and mall back-of-house runs across floors and areas.",
   },
   "pudu.flashbot.c1": { zh: "酒店樓宇", en: "Hotels & buildings" },
   "pudu.flashbot.c2": { zh: "跨層配送", en: "Multi-floor logistics" },
   "pudu.flashbot.c3": { zh: "後勤支援", en: "Back-of-house" },
 
-  "pudu.cc1.tag": { zh: "掃地洗地機器人", en: "Sweep & Scrub Robot" },
+  "pudu.cc1.tag": { zh: "掃地洗地機械人", en: "Sweep & Scrub Robot" },
   "pudu.cc1.desc": {
     zh: "商用掃地洗地方案，適合商場、寫字樓、醫院走廊等需要持續地面保潔的公共空間，減少人手重複勞動。",
     en: "Commercial sweep-and-scrub solution for malls, offices and hospital corridors that need continuous floor care with less manual labour.",
@@ -320,7 +320,7 @@ export const dict = {
   "pudu.sh1.c2": { zh: "走廊大堂", en: "Corridors & lobbies" },
   "pudu.sh1.c3": { zh: "智慧洗地", en: "Smart scrubbing" },
 
-  "pudu.puductor.tag": { zh: "紫外線清潔機器人", en: "UV Disinfection Robot" },
+  "pudu.puductor.tag": { zh: "紫外線清潔機械人", en: "UV Disinfection Robot" },
   "pudu.puductor.desc": {
     zh: "Puductor 2 以紫外線消毒為核心，可在離峰時段對室內空間進行自動化消殺，適合醫療、教育、酒店與對衛生要求較高的場所。",
     en: "Puductor 2 focuses on UV disinfection for automated sanitising of indoor spaces during off-peak hours—suited to healthcare, education, hospitality and hygiene-critical sites.",
@@ -341,14 +341,14 @@ export const dict = {
 
   "yunji.title": { zh: "雲迹科技", en: "Yunji Technology" },
   "yunji.body": {
-    zh: "北京雲迹科技有限公司成立於 2014 年，憑藉室內定位導航、機器人智能移動與大數據處理能力，為企業、政府機構、互聯網公司與社區服務等場景提供智能解決方案。",
+    zh: "北京雲迹科技有限公司成立於 2014 年，憑藉室內定位導航、機械人智能移動與大數據處理能力，為企業、政府機構、互聯網公司與社區服務等場景提供智能解決方案。",
     en: "Founded in 2014, Yunji Technology delivers intelligent solutions with expertise in indoor positioning, robot mobility and big data—serving enterprises, government, internet companies and community services.",
   },
 
   // Solutions
   "solutions.title": { zh: "智能方案", en: "Smart Solutions" },
   "solutions.sub": {
-    zh: "以 temi 與機器人技術，為各行業打造可落地的智能應用。",
+    zh: "以 temi 與機械人技術，為各行業打造可落地的智能應用。",
     en: "Practical intelligent applications with temi and robotics across industries.",
   },
   "sol.healthcare.title": { zh: "醫療保健和長者護理", en: "Healthcare & Elderly Care" },
@@ -363,7 +363,7 @@ export const dict = {
   },
   "sol.stem.title": { zh: "STEM 教育", en: "STEM Education" },
   "sol.stem.desc": {
-    zh: "讓新一代接管未來——以機器人啟發學習與創新思維。",
+    zh: "讓新一代接管未來——以機械人啟發學習與創新思維。",
     en: "Let the next generation take over the future—inspire learning with robotics.",
   },
   "sol.building.title": { zh: "樓宇及物業管理", en: "Building & Property Management" },
@@ -431,7 +431,7 @@ export const dict = {
   "join.title": { zh: "工作 / 實習機會", en: "Careers & Internships" },
   "join.subtitle": { zh: "成為博歌科技的一份子", en: "Become Part of Robocore" },
   "join.body": {
-    zh: "博歌科技正在提供工作和實習機會，歡迎充滿熱情和才華的您加入，為機器人技術行業帶來轉變。如果您希望在動態環境中提升技能並成長，我們邀請您探索職位空缺，成為我們創新旅程的一部分，共同塑造科技的未來。",
+    zh: "博歌科技正在提供工作和實習機會，歡迎充滿熱情和才華的您加入，為機械人技術行業帶來轉變。如果您希望在動態環境中提升技能並成長，我們邀請您探索職位空缺，成為我們創新旅程的一部分，共同塑造科技的未來。",
     en: "Robocore is hiring and offering internships. Join us to help transform the robotics industry. If you want to grow in a dynamic environment, explore our openings and help shape the future of technology.",
   },
   "join.how": {
@@ -442,12 +442,12 @@ export const dict = {
   // News
   "news.title": { zh: "新聞", en: "News" },
   "news.sub": {
-    zh: "博歌科技與機器人產業最新動態。",
+    zh: "博歌科技與機械人產業最新動態。",
     en: "Latest updates from Robocore and the robotics industry.",
   },
   "news.n1.date": { zh: "2025年8月21日", en: "21 Aug 2025" },
   "news.n1.title": {
-    zh: "富士康科技投資 3000 萬美元於博歌科技，進軍醫療及長者護理機器人市場",
+    zh: "富士康科技投資 3000 萬美元於博歌科技，進軍醫療及長者護理機械人市場",
     en: "Foxconn invests US$30M in Robocore to expand medical & elderly care robotics",
   },
   "news.n1.desc": {
