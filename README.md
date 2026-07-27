@@ -25,6 +25,12 @@ npm run preview
 
    `https://<你的帳號>.github.io/robocore-hk-website/`
 
+### 而家：Wix redirect → GitHub Pages
+
+舊站內容仍喺 Wix；訪客可跳去新站。完整步驟同可貼上 code：
+
+→ **[`docs/WIX_REDIRECT_SETUP.md`](docs/WIX_REDIRECT_SETUP.md)**
+
 ### 之後用 Wix domain（DNS）
 
 1. GitHub Pages → Custom domain 填入你哋域名（例如 `www.robocore.ai`）

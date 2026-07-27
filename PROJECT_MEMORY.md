@@ -22,6 +22,7 @@
 - 智能產品 Apple 式下拉（含產品類型標籤）
 - CC1 = 掃地洗地；MT1 = 大型垃圾
 - Domain 計劃：Wix 管 domain，站放 GitHub Pages，之後 DNS 指過去
+- **Wix redirect 設定包：** `docs/WIX_REDIRECT_SETUP.md` + `docs/wix-custom-code-redirect.html` + `docs/wix-redirects.csv`（需用戶 login Wix 貼 code；無法 API 代登）
 - Logo 必須用 `BASE_URL`（`asset()`），唔好 hardcode `/assets/`
 
 ## 更新方式

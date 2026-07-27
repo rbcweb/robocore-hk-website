@@ -1,0 +1,46 @@
+<!--
+  Paste this into Wix: Settings → Custom Code → Head → All pages
+  Then Publish. See WIX_REDIRECT_SETUP.md for steps.
+-->
+<script>
+(function () {
+  var BASE = "https://rbcweb.github.io/robocore-hk-website/";
+  var MAP = {
+    "/": "",
+    "/home": "",
+    "/products": "products.html",
+    "/solutions": "solutions.html",
+    "/temifamily": "temifamily.html",
+    "/temi-family": "temifamily.html",
+    "/temiv3": "temiv3.html",
+    "/temi-v3": "temiv3.html",
+    "/temigo": "temigo.html",
+    "/temi-go": "temigo.html",
+    "/temigopro": "temigopro.html",
+    "/temi-go-pro": "temigopro.html",
+    "/temiplatform": "temiplatform.html",
+    "/temi-platform": "temiplatform.html",
+    "/blackjack": "blackjack.html",
+    "/fourcast": "fourcast.html",
+    "/zpine": "zpine.html",
+    "/liftmodule": "liftmodule.html",
+    "/lift-module": "liftmodule.html",
+    "/pudu": "pudu.html",
+    "/contactus": "contactus.html",
+    "/contact": "contactus.html",
+    "/contact-us": "contactus.html",
+    "/joinus": "joinus.html",
+    "/join-us": "joinus.html",
+    "/news": "news.html",
+    "/temiwarranty": "temiwarranty.html",
+    "/temi-warranty": "temiwarranty.html",
+    "/yunji": "products.html"
+  };
+
+  var path = (location.pathname || "/").replace(/\/+$/, "") || "/";
+  path = path.toLowerCase();
+  var dest = Object.prototype.hasOwnProperty.call(MAP, path) ? MAP[path] : "";
+  var target = BASE + dest + (location.search || "") + (location.hash || "");
+  location.replace(target);
+})();
+</script>
