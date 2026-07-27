@@ -429,11 +429,16 @@
   object-fit: contain;
   filter: none;
   opacity: 1;
-  transition: opacity var(--transition), transform var(--transition);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.45rem 0.65rem;
+  transition: opacity var(--transition), transform var(--transition),
+    background var(--transition);
 }
 
 .marquee-track img:hover {
   transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 @keyframes marquee {
