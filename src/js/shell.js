@@ -4,13 +4,33 @@
 const BASE = import.meta.env.BASE_URL || "/";
 const asset = (path) => `${BASE}${String(path).replace(/^\//, "")}`;
 
+/** Monochrome SVGs — inherit currentColor (soft → accent on hover) */
+const SOCIAL_ICONS = {
+  facebook:
+    '<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.48h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg>',
+  instagram:
+    '<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>',
+  linkedin:
+    '<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/></svg>',
+  youtube:
+    '<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.75 15.5v-7l6.2 3.5-6.2 3.5z"/></svg>',
+  x: '<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>',
+};
+
 const SOCIALS = [
-  { href: "https://www.facebook.com/robocoretechnology/", label: "FB" },
-  { href: "https://www.instagram.com/robocoretechnology/", label: "IG" },
-  { href: "https://hk.linkedin.com/company/robocore-ai", label: "in" },
-  { href: "https://www.youtube.com/@robocoreai", label: "YT" },
-  { href: "https://x.com/robotemi", label: "X" },
+  { href: "https://www.facebook.com/robocoretechnology/", label: "Facebook", icon: "facebook" },
+  { href: "https://www.instagram.com/robocoretechnology/", label: "Instagram", icon: "instagram" },
+  { href: "https://hk.linkedin.com/company/robocore-ai", label: "LinkedIn", icon: "linkedin" },
+  { href: "https://www.youtube.com/@robocoreai", label: "YouTube", icon: "youtube" },
+  { href: "https://x.com/robotemi", label: "X", icon: "x" },
 ];
+
+export function renderSocials() {
+  return SOCIALS.map((s) => {
+    const svg = SOCIAL_ICONS[s.icon] || "";
+    return `<a class="social-link" href="${s.href}" target="_blank" rel="noopener noreferrer" aria-label="${s.label}" title="${s.label}">${svg}<span class="visually-hidden">${s.label}</span></a>`;
+  }).join("");
+}
 
 const PRODUCT_NAV = {
   brands: [
@@ -150,10 +170,6 @@ export function renderHeader(current = "index.html") {
 }
 
 export function renderFooter() {
-  const social = SOCIALS.map(
-    (s) => `<a href="${s.href}" target="_blank" rel="noopener noreferrer">${s.label}</a>`
-  ).join("");
-
   return `
   <footer class="site-footer">
     <div class="container">
@@ -184,7 +200,7 @@ export function renderFooter() {
           <h4 data-i18n="common.contactCta"></h4>
           <p><a href="mailto:Info@robocore.ai">Info@robocore.ai</a></p>
           <p data-i18n="common.address"></p>
-          <div class="socials" style="margin-top:1rem">${social}</div>
+          <div class="socials" style="margin-top:1rem">${renderSocials()}</div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -200,4 +216,7 @@ export function mountShell(currentPage) {
   const footerMount = document.getElementById("site-footer-mount");
   if (headerMount) headerMount.outerHTML = renderHeader(currentPage);
   if (footerMount) footerMount.outerHTML = renderFooter();
+  document.querySelectorAll("[data-socials]").forEach((el) => {
+    el.innerHTML = renderSocials();
+  });
 }
