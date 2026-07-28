@@ -262,11 +262,24 @@
 .card h3 {
   font-size: 1.15rem;
   margin-bottom: 0.5rem;
+  flex: 0 0 auto;
 }
 
-.card p {
-  flex: 1;
+/* Description grows; chips must not (flex:1 on <p.chip> stretched pills into ovals) */
+.card > p:not(.chip) {
+  flex: 1 1 auto;
   font-size: 0.95rem;
+  min-height: 0;
+}
+
+.card > p.chip,
+.card .chip {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 0.75rem;
+  box-sizing: border-box;
 }
 
 .card-link {
@@ -277,6 +290,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  flex: 0 0 auto;
 }
 
 .card-media {
@@ -598,13 +612,22 @@
 }
 
 .chip {
-  padding: 0.4rem 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.85rem;
   border-radius: var(--radius-pill);
   background: rgba(29, 240, 162, 0.08);
   border: 1px solid rgba(29, 240, 162, 0.22);
   color: var(--accent);
   font-size: 0.82rem;
   font-weight: 600;
+  line-height: 1.35;
+  width: fit-content;
+  max-width: 100%;
+  white-space: normal;
+  hyphens: auto;
+  box-sizing: border-box;
 }
 
 /* Contact */
