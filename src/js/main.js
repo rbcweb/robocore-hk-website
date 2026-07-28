@@ -185,6 +185,117 @@ function initContactForm() {
   });
 }
 
+const LAST_PRODUCT_KEY = "robocore:lastProduct";
+
+/** Product detail / anchor pages worth remembering for catalog highlight */
+function rememberCurrentProduct(page) {
+  if (!page || page === "products.html" || page === "temifamily.html" || page === "index.html") {
+    return;
+  }
+  const hash = location.hash.replace(/^#/, "");
+  if (page === "pudu.html") {
+    if (hash) sessionStorage.setItem(LAST_PRODUCT_KEY, `pudu.html#${hash}`);
+    return;
+  }
+  // Single-product pages (temiv3, zpine, liftmodule, …)
+  if (/\.html$/.test(page)) {
+    sessionStorage.setItem(LAST_PRODUCT_KEY, page);
+  }
+}
+
+function markCurrentProductCards(activeKey) {
+  const page = document.body.dataset.page || "";
+  const hash = location.hash.replace(/^#/, "");
+  const remembered = sessionStorage.getItem(LAST_PRODUCT_KEY) || "";
+  const current =
+    activeKey ||
+    (page === "pudu.html" && hash ? `pudu.html#${hash}` : null) ||
+    (page !== "products.html" && page !== "temifamily.html" && page !== "pudu.html" && page !== "index.html"
+      ? page
+      : null) ||
+    remembered;
+
+  // Pudu multi-product page: articles with id
+  document.querySelectorAll(".pudu-product-card[id]").forEach((el) => {
+    const key = `pudu.html#${el.id}`;
+    const on =
+      page === "pudu.html" &&
+      (hash ? el.id === hash : current === key);
+    el.classList.toggle("is-current", Boolean(on));
+  });
+
+  // Catalog link cards (products / temifamily / index)
+  document.querySelectorAll("a.card[href]").forEach((a) => {
+    const href = (a.getAttribute("href") || "").split("?")[0];
+    if (!href || href === "solutions.html") {
+      a.classList.remove("is-current");
+      return;
+    }
+    const on = Boolean(current) && (href === current || href === current.replace(/^\/+/, ""));
+    a.classList.toggle("is-current", on);
+  });
+}
+
+function initCurrentProductCards() {
+  const page = document.body.dataset.page || "";
+  rememberCurrentProduct(page);
+  markCurrentProductCards();
+
+  window.addEventListener("hashchange", () => {
+    rememberCurrentProduct(page);
+    markCurrentProductCards();
+    syncMegaActiveFromHash();
+  });
+
+  // Pudu: scroll-spy so the in-view product card glows
+  if (page !== "pudu.html") return;
+  const cards = [...document.querySelectorAll(".pudu-product-card[id]")];
+  if (!cards.length || !("IntersectionObserver" in window)) return;
+
+  let lockFromHash = Boolean(location.hash);
+  window.addEventListener("hashchange", () => {
+    lockFromHash = true;
+    window.setTimeout(() => {
+      lockFromHash = false;
+    }, 800);
+  });
+
+  const ratios = new Map();
+  const io = new IntersectionObserver(
+    (entries) => {
+      if (lockFromHash && location.hash) {
+        markCurrentProductCards(`pudu.html#${location.hash.replace(/^#/, "")}`);
+        return;
+      }
+      entries.forEach((e) => {
+        ratios.set(e.target.id, e.isIntersecting ? e.intersectionRatio : 0);
+      });
+      let bestId = "";
+      let best = 0;
+      ratios.forEach((r, id) => {
+        if (r > best) {
+          best = r;
+          bestId = id;
+        }
+      });
+      if (bestId && best > 0.12) {
+        rememberCurrentProduct("pudu.html");
+        sessionStorage.setItem(LAST_PRODUCT_KEY, `pudu.html#${bestId}`);
+        markCurrentProductCards(`pudu.html#${bestId}`);
+        // Keep mega menu in sync without fighting browser scroll-to-hash
+        if (!lockFromHash) {
+          document.querySelectorAll(".mega-model[href]").forEach((a) => {
+            const href = a.getAttribute("href") || "";
+            a.classList.toggle("is-active", href === `pudu.html#${bestId}`);
+          });
+        }
+      }
+    },
+    { root: null, rootMargin: "-25% 0px -45% 0px", threshold: [0, 0.15, 0.35, 0.55, 0.75] }
+  );
+  cards.forEach((c) => io.observe(c));
+}
+
 function boot() {
   const page = document.body.dataset.page || "index.html";
   mountShell(page);
@@ -192,6 +303,7 @@ function boot() {
   initLang();
   initReveal();
   initContactForm();
+  initCurrentProductCards();
 }
 
 if (document.readyState === "loading") {
