@@ -296,12 +296,8 @@
 .card-media {
   border-radius: calc(var(--radius) - 4px);
   overflow: hidden;
-  margin: 0 0 1rem;
-  width: 100%;
+  margin: -0.25rem -0.25rem 1rem;
   aspect-ratio: 4 / 3;
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
   background:
     radial-gradient(circle at 50% 40%, rgba(29, 240, 162, 0.12), transparent 55%),
     var(--bg-card);
@@ -311,14 +307,12 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center;
-  /* Images already padded on canvas — keep light inset only */
-  padding: 0.35rem;
+  padding: 0.85rem 1rem;
   transition: transform 0.5s var(--ease);
 }
 
 .card:hover .card-media img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 /* About split */
@@ -395,14 +389,8 @@
   scroll-margin-top: calc(var(--header-h) + 1.25rem);
 }
 
-/* Shared product-card media frame (temi + pudu): fixed 4:3 */
 .pudu-media {
   aspect-ratio: 4 / 3;
-  width: 100%;
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
   background:
     radial-gradient(circle at 50% 40%, rgba(29, 240, 162, 0.12), transparent 55%),
     var(--bg-card);
@@ -414,8 +402,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center;
-  padding: 0.35rem;
+  padding: 0.85rem 1rem;
   transition: transform 0.5s var(--ease);
 }
 
