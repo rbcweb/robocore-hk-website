@@ -186,18 +186,23 @@ function initContactForm() {
 }
 
 const LAST_PRODUCT_KEY = "robocore:lastProduct";
+/** Series pages that host multiple product cards with #anchors (like Pudu) */
+const SERIES_PAGES = new Set(["pudu.html", "temifamily.html"]);
+const CATALOG_PAGES = new Set(["products.html", "index.html"]);
+
+function seriesKey(page, id) {
+  return `${page}#${id}`;
+}
 
 /** Product detail / anchor pages worth remembering for catalog highlight */
 function rememberCurrentProduct(page) {
-  if (!page || page === "products.html" || page === "temifamily.html" || page === "index.html") {
-    return;
-  }
+  if (!page || CATALOG_PAGES.has(page)) return;
   const hash = location.hash.replace(/^#/, "");
-  if (page === "pudu.html") {
-    if (hash) sessionStorage.setItem(LAST_PRODUCT_KEY, `pudu.html#${hash}`);
+  if (SERIES_PAGES.has(page)) {
+    if (hash) sessionStorage.setItem(LAST_PRODUCT_KEY, seriesKey(page, hash));
     return;
   }
-  // Single-product pages (temiv3, zpine, liftmodule, …)
+  // Standalone products (zpine, liftmodule, …)
   if (/\.html$/.test(page)) {
     sessionStorage.setItem(LAST_PRODUCT_KEY, page);
   }
@@ -209,29 +214,27 @@ function markCurrentProductCards(activeKey) {
   const remembered = sessionStorage.getItem(LAST_PRODUCT_KEY) || "";
   const current =
     activeKey ||
-    (page === "pudu.html" && hash ? `pudu.html#${hash}` : null) ||
-    (page !== "products.html" && page !== "temifamily.html" && page !== "pudu.html" && page !== "index.html"
-      ? page
-      : null) ||
+    (SERIES_PAGES.has(page) && hash ? seriesKey(page, hash) : null) ||
+    (!SERIES_PAGES.has(page) && !CATALOG_PAGES.has(page) ? page : null) ||
     remembered;
 
-  // Pudu multi-product page: articles with id
+  // Multi-product series cards (temi / pudu)
   document.querySelectorAll(".pudu-product-card[id]").forEach((el) => {
-    const key = `pudu.html#${el.id}`;
+    const key = seriesKey(page, el.id);
     const on =
-      page === "pudu.html" &&
+      SERIES_PAGES.has(page) &&
       (hash ? el.id === hash : current === key);
     el.classList.toggle("is-current", Boolean(on));
   });
 
-  // Catalog link cards (products / temifamily / index)
-  document.querySelectorAll("a.card[href]").forEach((a) => {
+  // Catalog link cards (products / index)
+  document.querySelectorAll("a.card[href], a.product-tile[href]").forEach((a) => {
     const href = (a.getAttribute("href") || "").split("?")[0];
-    if (!href || href === "solutions.html") {
+    if (!href || href === "solutions.html" || href === "temifamily.html" || href === "pudu.html") {
       a.classList.remove("is-current");
       return;
     }
-    const on = Boolean(current) && (href === current || href === current.replace(/^\/+/, ""));
+    const on = Boolean(current) && href === current;
     a.classList.toggle("is-current", on);
   });
 }
@@ -247,8 +250,8 @@ function initCurrentProductCards() {
     syncMegaActiveFromHash();
   });
 
-  // Pudu: scroll-spy so the in-view product card glows
-  if (page !== "pudu.html") return;
+  // Series pages: scroll-spy so the in-view product card glows
+  if (!SERIES_PAGES.has(page)) return;
   const cards = [...document.querySelectorAll(".pudu-product-card[id]")];
   if (!cards.length || !("IntersectionObserver" in window)) return;
 
@@ -264,7 +267,7 @@ function initCurrentProductCards() {
   const io = new IntersectionObserver(
     (entries) => {
       if (lockFromHash && location.hash) {
-        markCurrentProductCards(`pudu.html#${location.hash.replace(/^#/, "")}`);
+        markCurrentProductCards(seriesKey(page, location.hash.replace(/^#/, "")));
         return;
       }
       entries.forEach((e) => {
@@ -279,14 +282,13 @@ function initCurrentProductCards() {
         }
       });
       if (bestId && best > 0.12) {
-        rememberCurrentProduct("pudu.html");
-        sessionStorage.setItem(LAST_PRODUCT_KEY, `pudu.html#${bestId}`);
-        markCurrentProductCards(`pudu.html#${bestId}`);
-        // Keep mega menu in sync without fighting browser scroll-to-hash
+        const key = seriesKey(page, bestId);
+        sessionStorage.setItem(LAST_PRODUCT_KEY, key);
+        markCurrentProductCards(key);
         if (!lockFromHash) {
           document.querySelectorAll(".mega-model[href]").forEach((a) => {
             const href = a.getAttribute("href") || "";
-            a.classList.toggle("is-active", href === `pudu.html#${bestId}`);
+            a.classList.toggle("is-active", href === key);
           });
         }
       }

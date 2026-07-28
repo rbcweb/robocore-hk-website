@@ -40,12 +40,12 @@ const PRODUCT_NAV = {
       overviewHref: "temifamily.html",
       overviewKey: "nav.exploreSeries",
       models: [
-        { name: "temi v3", href: "temiv3.html", typeKey: "nav.type.service" },
-        { name: "temi Platform", href: "temiplatform.html", typeKey: "nav.type.chassis" },
-        { name: "temi GO", href: "temigo.html", typeKey: "nav.type.delivery" },
-        { name: "temi GO PRO", href: "temigopro.html", typeKey: "nav.type.quadDelivery" },
-        { name: "Blackjack", href: "blackjack.html", typeKey: "nav.type.patrol" },
-        { name: "Fourcast", href: "fourcast.html", typeKey: "nav.type.ad" },
+        { name: "temi v3", href: "temifamily.html#temiv3", typeKey: "nav.type.service" },
+        { name: "temi Platform", href: "temifamily.html#temiplatform", typeKey: "nav.type.chassis" },
+        { name: "temi GO", href: "temifamily.html#temigo", typeKey: "nav.type.delivery" },
+        { name: "temi GO PRO", href: "temifamily.html#temigopro", typeKey: "nav.type.quadDelivery" },
+        { name: "Blackjack", href: "temifamily.html#blackjack", typeKey: "nav.type.patrol" },
+        { name: "Fourcast", href: "temifamily.html#fourcast", typeKey: "nav.type.ad" },
       ],
     },
     {
