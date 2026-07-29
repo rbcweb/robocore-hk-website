@@ -331,6 +331,9 @@ export const dict = {
     en: "Robocore can help with selection, demos and deployment for F&B, hotels, buildings or cleaning needs.",
   },
   "pudu.backProducts": { zh: "返回智能產品", en: "Back to Products" },
+  "pudu.backSeries": { zh: "返回 Pudu 系列", en: "Back to Pudu series" },
+  "pudu.viewSpecs": { zh: "查看規格", en: "View specs" },
+  "pudu.specs": { zh: "產品規格", en: "Specifications" },
 
   // Solutions
   "solutions.title": { zh: "智能方案", en: "Smart Solutions" },
@@ -491,6 +494,9 @@ export const dict = {
     zh: "完整 temi 產品家族——服務、配送、巡邏與廣告。",
     en: "The complete temi family—service, delivery, patrol and advertising.",
   },
+  "tf.specs": { zh: "產品規格", en: "Specifications" },
+  "tf.backSeries": { zh: "返回 temi 系列", en: "Back to temi series" },
+  "tf.viewSpecs": { zh: "查看規格", en: "View specs" },
 };
 
 export function t(key, lang) {

@@ -1,5 +1,6 @@
 import { applyI18n, detectLang } from "./i18n.js";
 import { mountShell } from "./shell.js";
+import { renderSpecsTable } from "./data/temi-specs.js";
 
 function syncMegaActiveFromHash() {
   const page = document.body.dataset.page || "";
@@ -132,13 +133,22 @@ function initMegaMenu() {
   });
 }
 
+function paintSpecsTables(lang) {
+  document.querySelectorAll("[data-specs]").forEach((el) => {
+    const id = el.getAttribute("data-specs");
+    el.innerHTML = renderSpecsTable(id, lang);
+  });
+}
+
 function initLang() {
   let lang = detectLang();
   applyI18n(lang);
+  paintSpecsTables(lang);
   document.querySelectorAll(".lang-switch button").forEach((btn) => {
     btn.addEventListener("click", () => {
       lang = btn.dataset.lang;
       applyI18n(lang);
+      paintSpecsTables(lang);
       const url = new URL(location.href);
       url.searchParams.set("lang", lang);
       history.replaceState(null, "", url);
@@ -195,6 +205,35 @@ function seriesKey(page, id) {
 }
 
 /** Product detail / anchor pages worth remembering for catalog highlight */
+const PRODUCT_DETAIL_PAGES = new Set([
+  "temiv3.html",
+  "temiplatform.html",
+  "temigo.html",
+  "temigopro.html",
+  "blackjack.html",
+  "fourcast.html",
+  "pudubot.html",
+  "bellabot.html",
+  "holabot.html",
+  "flashbot.html",
+  "cc1.html",
+  "mt1.html",
+  "sh1.html",
+  "puductor.html",
+]);
+
+/** Legacy pudu.html#id → detail page */
+const PUDU_HASH_REDIRECT = {
+  pudubot: "pudubot.html",
+  bellabot: "bellabot.html",
+  holabot: "holabot.html",
+  flashbot: "flashbot.html",
+  cc1: "cc1.html",
+  mt1: "mt1.html",
+  sh1: "sh1.html",
+  puductor: "puductor.html",
+};
+
 function rememberCurrentProduct(page) {
   if (!page || CATALOG_PAGES.has(page)) return;
   const hash = location.hash.replace(/^#/, "");
@@ -202,8 +241,7 @@ function rememberCurrentProduct(page) {
     if (hash) sessionStorage.setItem(LAST_PRODUCT_KEY, seriesKey(page, hash));
     return;
   }
-  // Standalone products (zpine, liftmodule, …)
-  if (/\.html$/.test(page)) {
+  if (PRODUCT_DETAIL_PAGES.has(page) || /\.html$/.test(page)) {
     sessionStorage.setItem(LAST_PRODUCT_KEY, page);
   }
 }
@@ -300,6 +338,15 @@ function initCurrentProductCards() {
 
 function boot() {
   const page = document.body.dataset.page || "index.html";
+  // Old deep links: pudu.html#bellabot → bellabot.html
+  if (page === "pudu.html") {
+    const hash = location.hash.replace(/^#/, "");
+    const dest = PUDU_HASH_REDIRECT[hash];
+    if (dest) {
+      location.replace(dest + location.search);
+      return;
+    }
+  }
   mountShell(page);
   initNav();
   initLang();

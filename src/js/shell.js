@@ -38,12 +38,12 @@ const PRODUCT_NAV = {
       overviewHref: "temifamily.html",
       overviewKey: "nav.exploreSeries",
       models: [
-        { name: "temi v3", href: "temifamily.html#temiv3", typeKey: "nav.type.service" },
-        { name: "temi Platform", href: "temifamily.html#temiplatform", typeKey: "nav.type.chassis" },
-        { name: "temi GO", href: "temifamily.html#temigo", typeKey: "nav.type.delivery" },
-        { name: "temi GO PRO", href: "temifamily.html#temigopro", typeKey: "nav.type.quadDelivery" },
-        { name: "Blackjack", href: "temifamily.html#blackjack", typeKey: "nav.type.patrol" },
-        { name: "Fourcast", href: "temifamily.html#fourcast", typeKey: "nav.type.ad" },
+        { name: "temi v3", href: "temiv3.html", typeKey: "nav.type.service" },
+        { name: "temi Platform", href: "temiplatform.html", typeKey: "nav.type.chassis" },
+        { name: "temi GO", href: "temigo.html", typeKey: "nav.type.delivery" },
+        { name: "temi GO PRO", href: "temigopro.html", typeKey: "nav.type.quadDelivery" },
+        { name: "Blackjack", href: "blackjack.html", typeKey: "nav.type.patrol" },
+        { name: "Fourcast", href: "fourcast.html", typeKey: "nav.type.ad" },
       ],
     },
     {
@@ -52,14 +52,14 @@ const PRODUCT_NAV = {
       overviewHref: "pudu.html",
       overviewKey: "nav.exploreSeries",
       models: [
-        { name: "PuduBot 2", href: "pudu.html#pudubot", typeKey: "nav.type.foodDelivery" },
-        { name: "BellaBot", href: "pudu.html#bellabot", typeKey: "nav.type.premiumFood" },
-        { name: "HolaBot", href: "pudu.html#holabot", typeKey: "nav.type.premiumDelivery" },
-        { name: "FlashBot", href: "pudu.html#flashbot", typeKey: "nav.type.buildingDelivery" },
-        { name: "CC1", href: "pudu.html#cc1", typeKey: "nav.type.sweepScrub" },
-        { name: "MT1", href: "pudu.html#mt1", typeKey: "nav.type.bulkWaste" },
-        { name: "SH1", href: "pudu.html#sh1", typeKey: "nav.type.uprightScrub" },
-        { name: "Puductor 2", href: "pudu.html#puductor", typeKey: "nav.type.uv" },
+        { name: "PuduBot 2", href: "pudubot.html", typeKey: "nav.type.foodDelivery" },
+        { name: "BellaBot", href: "bellabot.html", typeKey: "nav.type.premiumFood" },
+        { name: "HolaBot", href: "holabot.html", typeKey: "nav.type.premiumDelivery" },
+        { name: "FlashBot", href: "flashbot.html", typeKey: "nav.type.buildingDelivery" },
+        { name: "CC1", href: "cc1.html", typeKey: "nav.type.sweepScrub" },
+        { name: "MT1", href: "mt1.html", typeKey: "nav.type.bulkWaste" },
+        { name: "SH1", href: "sh1.html", typeKey: "nav.type.uprightScrub" },
+        { name: "Puductor 2", href: "puductor.html", typeKey: "nav.type.uv" },
       ],
     },
   ],
@@ -117,7 +117,7 @@ function productsMega(current) {
     <div class="nav-item nav-item-mega" data-mega>
       <button
         type="button"
-        class="nav-link nav-mega-trigger${current === "products.html" || current.startsWith("temi") || current === "pudu.html" || current === "temifamily.html" || current === "zpine.html" || current === "liftmodule.html" || current === "blackjack.html" || current === "fourcast.html" ? " is-active" : ""}"
+        class="nav-link nav-mega-trigger${current === "products.html" || current.startsWith("temi") || current === "pudu.html" || current === "temifamily.html" || current === "zpine.html" || current === "liftmodule.html" || current === "blackjack.html" || current === "fourcast.html" || current === "pudubot.html" || current === "bellabot.html" || current === "holabot.html" || current === "flashbot.html" || current === "cc1.html" || current === "mt1.html" || current === "sh1.html" || current === "puductor.html" ? " is-active" : ""}"
         aria-expanded="false"
         aria-controls="products-mega"
         data-mega-trigger
