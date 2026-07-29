@@ -27,4 +27,8 @@
 
 ## 更新方式
 
-改 code → commit → `git push origin main` → 約 1 分鐘後刷新線上站
+1. **Local 先做**（改 code / build / 預覽）
+2. **等用戶明確 OK** 先推官方
+3. 用戶批准後先：`git push origin main` → GitHub Pages 約 1 分鐘更新
+
+⚠️ 未獲用戶批准前 **唔好** 自動 push 官方站。
