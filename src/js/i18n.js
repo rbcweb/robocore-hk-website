@@ -64,6 +64,11 @@ export const dict = {
     zh: "博歌（Robocore）是總部位於香港的專業機械人綜合解決方案供應商，以 temi 與 Pudu 等智能機械人產品線，協助企業升級營運。",
     en: "Robocore is a Hong Kong–headquartered provider of comprehensive robotics solutions—balancing temi and Pudu product lines to help enterprises upgrade operations.",
   },
+  "home.newsTitle": { zh: "最新動態", en: "Latest News" },
+  "home.newsSub": {
+    zh: "媒體報道與公司最新消息。",
+    en: "Media coverage and company updates.",
+  },
   "home.aboutKicker": { zh: "關於我們", en: "About Us" },
   "home.aboutTitle": {
     zh: "讓機械人將您的業務\n推向更高的領域",
@@ -413,8 +418,8 @@ export const dict = {
   "contact.formCompany": { zh: "公司", en: "Company" },
   "contact.formMsg": { zh: "訊息", en: "Message" },
   "contact.formNote": {
-    zh: "提交後將開啟電郵客戶端，發送至 Info@robocore.ai。",
-    en: "Submit opens your email client to send to Info@robocore.ai.",
+    zh: "提交後將開啟電郵客戶端，發送至 info@robocore.ai。",
+    en: "Submit opens your email client to send to info@robocore.ai.",
   },
 
   // Join
@@ -425,8 +430,8 @@ export const dict = {
     en: "Robocore is hiring and offering internships. Join us to help transform the robotics industry. If you want to grow in a dynamic environment, explore our openings and help shape the future of technology.",
   },
   "join.how": {
-    zh: "如果您有興趣加入我們的團隊，請發送電子郵件至 Info@robocore.ai，附上履歷和求職信（如有），郵件標題為 [申請 Robocore 工作機會 + (您的名字)]。期待收到您的申請！",
-    en: "Email Info@robocore.ai with your CV and cover letter (if any). Subject: [Application for Robocore + (Your Name)]. We look forward to hearing from you!",
+    zh: "如果您有興趣加入我們的團隊，請發送電子郵件至 info@robocore.ai，附上履歷和求職信（如有），郵件標題為 [申請 Robocore 工作機會 + (您的名字)]。期待收到您的申請！",
+    en: "Email info@robocore.ai with your CV and cover letter (if any). Subject: [Application for Robocore + (Your Name)]. We look forward to hearing from you!",
   },
 
   // News
@@ -472,7 +477,7 @@ export const dict = {
   },
   "news.n3.desc": {
     zh: "賽馬會捐助、YMCA COC 主辦頒獎禮暨同樂日；博歌科技行政總裁林朗熙分享 SEN 青年為團隊注入正能量。",
-    en: "HKJC-funded, YMCA COC-hosted ceremony; Robocore CEO Vincent Lam on how SEN youth energise teams and productivity.",
+    en: "HKJC-funded, YMCA COC-hosted ceremony; Robocore CEO Roy Lim on how SEN youth energise teams and productivity.",
   },
   "news.n3.caption": {
     zh: "圖片來源：am730／相關報道",
@@ -488,7 +493,7 @@ export const dict = {
   },
   "news.n3.p3": {
     zh: "博歌科技（RoboCore Technology）行政總裁兼香港青年工業家協會副會長林朗熙先生表示，SEN 青年的加入為團隊注入強大正能量，團隊士氣與生產力均迎來突破性成長。其他企業代表亦指出，SEN 員工在專注力、穩定性、守時及細心等方面表現突出，聘用並非僅為形象，而是真實的人才優勢。",
-    en: "RoboCore Technology CEO and YHKA vice chairman Mr Vincent Lam said SEN colleagues bring strong positive energy, cohesion and a clear lift in productivity. Other employers likewise highlighted focus, reliability, punctuality and careful work—hiring SEN talent for capability, not only for inclusion branding.",
+    en: "RoboCore Technology CEO and YHKA vice chairman Mr Roy Lim said SEN colleagues bring strong positive energy, cohesion and a clear lift in productivity. Other employers likewise highlighted focus, reliability, punctuality and careful work—hiring SEN talent for capability, not only for inclusion branding.",
   },
 
   // on.cc — same event angle
@@ -500,7 +505,7 @@ export const dict = {
   },
   "news.n4.desc": {
     zh: "修頓場館頒獎禮暨同樂日；RoboCore Technology 行政總裁林朗熙與多位僱主分享 SEN 青年職場價值。",
-    en: "Awards and fun day at Southorn Stadium; RoboCore Technology CEO Vincent Lam and employers on SEN talent at work.",
+    en: "Awards and fun day at Southorn Stadium; RoboCore Technology CEO Roy Lim and employers on SEN talent at work.",
   },
   "news.n4.caption": {
     zh: "圖片來源：on.cc 東網／客戶提供",
@@ -516,7 +521,7 @@ export const dict = {
   },
   "news.n4.p3": {
     zh: "RoboCore Technology 行政總裁兼香港青年工業家協會副會長林朗熙先生指，SEN 青年的加入為團隊注入正能量，令公司凝聚向心力與歸屬感，整體工作效率與生產力亦大幅提升。其他僱主亦分享 SEN 員工在專注、穩定、守時及巡查接待等工作上的表現，肯定其職場價值。",
-    en: "RoboCore Technology CEO and YHKA vice chairman Mr Vincent Lam said SEN hires inject positive energy, strengthen belonging and significantly lift efficiency and productivity. Fellow employers also praised focus, reliability, punctuality and solid performance in inspection, reception and admin roles.",
+    en: "RoboCore Technology CEO and YHKA vice chairman Mr Roy Lim said SEN hires inject positive energy, strengthen belonging and significantly lift efficiency and productivity. Fellow employers also praised focus, reliability, punctuality and solid performance in inspection, reception and admin roles.",
   },
 
   // Instagram reel — list card only (external)
@@ -561,8 +566,8 @@ export const dict = {
     en: "Keep original packaging. Contact us within the warranty period with proof of purchase, receipt or order number. Support may diagnose remotely, repair, or request return in original packaging. Service is available in the region of purchase.",
   },
   "warranty.contact": {
-    zh: "如需保固支援，請電郵 Info@robocore.ai 或透過聯絡頁與我們聯繫。",
-    en: "For warranty support, email Info@robocore.ai or reach us via the contact page.",
+    zh: "如需保固支援，請電郵 info@robocore.ai 或透過聯絡頁與我們聯繫。",
+    en: "For warranty support, email info@robocore.ai or reach us via the contact page.",
   },
 
   // Temi family

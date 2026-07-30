@@ -61,36 +61,30 @@
   gap: 0.35rem;
 }
 
-/* Nav tab hover + active — temi green glow, rounded */
+/* Nav tab hover + active — soft green glow only, no outline frame */
 .nav-link:hover,
-.nav > a:hover,
-.nav-link.is-active,
-.nav > a.is-active {
+.nav > a:hover {
   color: var(--accent);
   background: rgba(29, 240, 162, 0.1);
   border-radius: var(--radius-sm);
-  box-shadow:
-    0 0 0 1px rgba(29, 240, 162, 0.4),
-    0 0 16px rgba(29, 240, 162, 0.28),
-    0 0 32px rgba(29, 240, 162, 0.12);
-  text-shadow: 0 0 12px rgba(29, 240, 162, 0.5);
+  box-shadow: 0 0 20px rgba(29, 240, 162, 0.22);
+  text-shadow: 0 0 10px rgba(29, 240, 162, 0.4);
 }
 
 .nav-link.is-active,
 .nav > a.is-active {
-  background: rgba(29, 240, 162, 0.14);
-  box-shadow:
-    0 0 0 1px rgba(29, 240, 162, 0.5),
-    0 0 20px rgba(29, 240, 162, 0.35),
-    0 0 40px rgba(29, 240, 162, 0.15);
-  text-shadow: 0 0 14px rgba(29, 240, 162, 0.6);
+  color: var(--accent);
+  background: rgba(29, 240, 162, 0.12);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 24px rgba(29, 240, 162, 0.28);
+  text-shadow: 0 0 12px rgba(29, 240, 162, 0.45);
 }
 
 .nav-link:hover .nav-caret,
 .nav-link.is-active .nav-caret,
 .nav-mega-trigger.is-active .nav-caret {
   opacity: 1;
-  filter: drop-shadow(0 0 6px rgba(29, 240, 162, 0.7));
+  filter: drop-shadow(0 0 6px rgba(29, 240, 162, 0.55));
 }
 
 .nav-item-mega {
@@ -197,10 +191,9 @@
   font-weight: 600;
   background: transparent !important;
   text-align: left;
-  border: 1px solid transparent;
+  border: 0;
   transition: background var(--transition), box-shadow var(--transition),
-    color var(--transition), border-color var(--transition),
-    text-shadow var(--transition);
+    color var(--transition), text-shadow var(--transition);
 }
 
 .mega-model-name {
@@ -217,38 +210,33 @@
   transition: color var(--transition);
 }
 
-/* Mega row hover + active — green glow, rounded border */
-.mega-model:hover,
-.mega-model.is-active {
+/* Mega product row — soft green glow only (match top nav) */
+.mega-model:hover {
   background: rgba(29, 240, 162, 0.1) !important;
-  border-color: rgba(29, 240, 162, 0.45);
-  border-radius: 12px;
-  box-shadow:
-    0 0 0 1px rgba(29, 240, 162, 0.25),
-    0 0 16px rgba(29, 240, 162, 0.28),
-    0 0 28px rgba(29, 240, 162, 0.12),
-    inset 0 0 18px rgba(29, 240, 162, 0.05);
+  box-shadow: 0 0 20px rgba(29, 240, 162, 0.22);
 }
 
-.mega-model:hover .mega-model-name,
-.mega-model.is-active .mega-model-name {
+.mega-model:hover .mega-model-name {
   color: var(--accent);
-  text-shadow: 0 0 12px rgba(29, 240, 162, 0.55);
+  text-shadow: 0 0 10px rgba(29, 240, 162, 0.4);
 }
 
-.mega-model:hover .mega-model-type,
-.mega-model.is-active .mega-model-type {
+.mega-model:hover .mega-model-type {
   color: rgba(29, 240, 162, 0.85);
 }
 
 .mega-model.is-active {
-  background: rgba(29, 240, 162, 0.14) !important;
-  border-color: rgba(29, 240, 162, 0.55);
-  box-shadow:
-    0 0 0 1px rgba(29, 240, 162, 0.35),
-    0 0 18px rgba(29, 240, 162, 0.32),
-    0 0 36px rgba(29, 240, 162, 0.14),
-    inset 0 0 20px rgba(29, 240, 162, 0.07);
+  background: rgba(29, 240, 162, 0.12) !important;
+  box-shadow: 0 0 24px rgba(29, 240, 162, 0.28);
+}
+
+.mega-model.is-active .mega-model-name {
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(29, 240, 162, 0.45);
+}
+
+.mega-model.is-active .mega-model-type {
+  color: rgba(29, 240, 162, 0.85);
 }
 
 .mega-footer-row {
@@ -281,12 +269,12 @@
   gap: 0.4rem;
   padding: 0.4rem 0.85rem !important;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--border);
+  border: 0;
   font-size: 0.82rem !important;
   color: var(--text-soft) !important;
   background: rgba(255, 255, 255, 0.03) !important;
-  transition: border-color var(--transition), color var(--transition),
-    background var(--transition), box-shadow var(--transition);
+  transition: color var(--transition), background var(--transition),
+    box-shadow var(--transition);
 }
 
 .mega-extra-type {
@@ -295,28 +283,24 @@
   color: var(--text-muted);
 }
 
-.mega-extra:hover,
-.mega-extra.is-active {
-  border-color: rgba(29, 240, 162, 0.55);
-  border-radius: var(--radius-pill);
+.mega-extra:hover {
   color: var(--accent) !important;
   background: rgba(29, 240, 162, 0.1) !important;
-  box-shadow:
-    0 0 0 1px rgba(29, 240, 162, 0.25),
-    0 0 16px rgba(29, 240, 162, 0.28),
-    0 0 28px rgba(29, 240, 162, 0.12);
+  box-shadow: 0 0 20px rgba(29, 240, 162, 0.22);
 }
 
-.mega-extra:hover .mega-extra-type,
-.mega-extra.is-active .mega-extra-type {
+.mega-extra:hover .mega-extra-type {
   color: rgba(29, 240, 162, 0.85);
 }
 
 .mega-extra.is-active {
-  background: rgba(29, 240, 162, 0.14) !important;
-  box-shadow:
-    0 0 0 1px rgba(29, 240, 162, 0.35),
-    0 0 18px rgba(29, 240, 162, 0.32);
+  color: var(--accent) !important;
+  background: rgba(29, 240, 162, 0.12) !important;
+  box-shadow: 0 0 24px rgba(29, 240, 162, 0.28);
+}
+
+.mega-extra.is-active .mega-extra-type {
+  color: rgba(29, 240, 162, 0.85);
 }
 
 .header-actions {

@@ -191,7 +191,7 @@ function initContactForm() {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\n${message}`
     );
-    window.location.href = `mailto:Info@robocore.ai?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@robocore.ai?subject=${subject}&body=${body}`;
   });
 }
 

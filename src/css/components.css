@@ -924,8 +924,16 @@
   border-radius: 12px;
   border: 1px solid var(--border-strong);
   background: var(--bg-elevated);
+  color: var(--accent);
+  caret-color: var(--accent);
   outline: none;
   transition: border-color var(--transition);
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
 }
 
 .form-row input:focus,
@@ -937,6 +945,31 @@
 .form-row textarea {
   min-height: 140px;
   resize: vertical;
+}
+
+/* Home news — above About Us */
+.home-news .section-head {
+  margin-bottom: 1.75rem;
+}
+
+.home-news-grid .news-card h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.home-news-grid .news-card > p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .home-news-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* News */

@@ -149,8 +149,8 @@ export function renderHeader(current = "index.html") {
       </a>
       <nav class="nav" id="primary-nav" aria-label="Primary">
         ${productsMega(current)}
-        ${navLink("solutions.html", "nav.solutions", current)}
         ${navLink("news.html", "nav.news", current.startsWith("news") ? "news.html" : current)}
+        ${navLink("solutions.html", "nav.solutions", current)}
         ${navLink("joinus.html", "nav.join", current)}
         ${navLink("contactus.html", "nav.contact", current)}
       </nav>
@@ -196,7 +196,7 @@ export function renderFooter() {
         </div>
         <div class="footer-col">
           <h4 data-i18n="common.contactCta"></h4>
-          <p><a href="mailto:Info@robocore.ai">Info@robocore.ai</a></p>
+          <p><a href="mailto:info@robocore.ai">info@robocore.ai</a></p>
           <p data-i18n="common.address"></p>
           <div class="socials" style="margin-top:1rem">${renderSocials()}</div>
         </div>

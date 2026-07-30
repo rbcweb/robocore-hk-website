@@ -39,5 +39,5 @@ npm run preview
 
 ## 聯絡
 
-- Email: Info@robocore.ai  
+- Email: info@robocore.ai  
 - 地址: 九龍灣臨興街 21 號美羅中心二期 17 樓 1721 室
