@@ -435,6 +435,15 @@ export const dict = {
     zh: "博歌科技與機械人產業最新動態。",
     en: "Latest updates from Robocore and the robotics industry.",
   },
+  "news.readMore": { zh: "閱讀全文", en: "Read more" },
+  "news.sourceLabel": { zh: "新聞來源", en: "Source" },
+  "news.viewOriginal": { zh: "查看原文", en: "View original article" },
+  "news.disclaimer": {
+    zh: "以下為報道重點整理，版權屬原媒體所有；詳情請參閱原文。",
+    en: "Summary of key points for reference only. Copyright remains with the original publisher—please see the source article for full details.",
+  },
+  "news.openExternal": { zh: "在 Instagram 觀看", en: "Watch on Instagram" },
+
   "news.n1.date": { zh: "2025年8月21日", en: "21 Aug 2025" },
   "news.n1.title": {
     zh: "富士康科技投資 3000 萬美元於博歌科技，進軍醫療及長者護理機械人市場",
@@ -452,6 +461,74 @@ export const dict = {
   "news.n2.desc": {
     zh: "展優勢、拓商機、助引資——博歌科技亮相國際舞台。",
     en: "Showcasing strengths, opening markets—Robocore on the global stage.",
+  },
+
+  // am730 — SEN robot ambassador graduation
+  "news.n3.date": { zh: "2026年7月28日", en: "28 Jul 2026" },
+  "news.n3.source": { zh: "am730", en: "am730" },
+  "news.n3.title": {
+    zh: "第二屆「商場機械人服務大使」課程畢業　SEN 青年憑科技闖出智慧職場",
+    en: "2nd “Shopping Mall Robot Service Ambassador” course graduates—SEN youth step into smart service roles",
+  },
+  "news.n3.desc": {
+    zh: "賽馬會捐助、YMCA COC 主辦頒獎禮暨同樂日；博歌科技行政總裁林朗熙分享 SEN 青年為團隊注入正能量。",
+    en: "HKJC-funded, YMCA COC-hosted ceremony; Robocore CEO Vincent Lam on how SEN youth energise teams and productivity.",
+  },
+  "news.n3.caption": {
+    zh: "圖片來源：am730／相關報道",
+    en: "Image source: am730 / related coverage",
+  },
+  "news.n3.p1": {
+    zh: "由香港賽馬會慈善信託基金捐助、中華基督教青年會－青年會專業書院（YMCA COC）主辦的「賽馬會鼓掌－創新教育歷程：耀眼之星」應用學習調適課程計劃成果盛典——第二屆「商場機械人服務大使」課程頒獎儀式暨同樂日，早前於修頓場館舉行，見證 36 位有特殊教育需要（SEN）學員順利畢業，為智慧服務領域注入具備實戰經驗的新力軍。",
+    en: "Supported by The Hong Kong Jockey Club Charities Trust and organised by YMCA College of Careers (YMCA COC), the 2nd “Shopping Mall Robot Service Ambassador” graduation ceremony and fun day—part of the “Jockey Club Clap—Innovative Education Journey: Shining Stars” applied learning programme—was held at Southorn Stadium. Thirty-six young people with special educational needs (SEN) graduated, bringing practical skills into smart service roles.",
+  },
+  "news.n3.p2": {
+    zh: "計劃以階梯式培訓，涵蓋機械人操作、客戶服務及生涯規劃，並安排商場實地考察；亦結合職前培訓與就業配對，至今連同首屆已累計培育近 80 位 SEN 青年。典禮設專題討論，教育界與商界代表就 SEN 青年職前培訓與就業支援交流經驗。",
+    en: "The programme uses a stepped pathway covering robot operations, customer service and career planning, plus mall field visits, pre-employment training and job matching. Together with the first cohort, nearly 80 SEN youth have been trained. A panel at the ceremony brought education and industry voices together on training and employment support.",
+  },
+  "news.n3.p3": {
+    zh: "博歌科技（RoboCore Technology）行政總裁兼香港青年工業家協會副會長林朗熙先生表示，SEN 青年的加入為團隊注入強大正能量，團隊士氣與生產力均迎來突破性成長。其他企業代表亦指出，SEN 員工在專注力、穩定性、守時及細心等方面表現突出，聘用並非僅為形象，而是真實的人才優勢。",
+    en: "RoboCore Technology CEO and YHKA vice chairman Mr Vincent Lam said SEN colleagues bring strong positive energy, cohesion and a clear lift in productivity. Other employers likewise highlighted focus, reliability, punctuality and careful work—hiring SEN talent for capability, not only for inclusion branding.",
+  },
+
+  // on.cc — same event angle
+  "news.n4.date": { zh: "2026年7月27日", en: "27 Jul 2026" },
+  "news.n4.source": { zh: "on.cc 東網", en: "on.cc" },
+  "news.n4.title": {
+    zh: "賽馬會第二屆「商場機械人服務大使」課程頒獎　36 位 SEN 青年邁向智慧服務",
+    en: "HKJC 2nd Robot Service Ambassador awards—36 SEN youth advance in smart services",
+  },
+  "news.n4.desc": {
+    zh: "修頓場館頒獎禮暨同樂日；RoboCore Technology 行政總裁林朗熙與多位僱主分享 SEN 青年職場價值。",
+    en: "Awards and fun day at Southorn Stadium; RoboCore Technology CEO Vincent Lam and employers on SEN talent at work.",
+  },
+  "news.n4.caption": {
+    zh: "圖片來源：on.cc 東網／客戶提供",
+    en: "Image source: on.cc / provided by client",
+  },
+  "news.n4.p1": {
+    zh: "由香港賽馬會慈善信託基金捐助、中華基督教青年會－青年會專業書院（YMCACOC）主辦的「賽馬會鼓掌－創新教育歷程：耀眼之星」第二屆「商場機械人服務大使」應用學習調適課程頒獎儀式暨同樂日，於 2026 年 7 月 25 日假灣仔修頓場館舉行。主禮嘉賓、業界代表、導師及家長共聚，見證 36 位 SEN 青年的努力與成長。",
+    en: "On 25 July 2026 at Southorn Stadium, Wan Chai, the 2nd “Shopping Mall Robot Service Ambassador” awards ceremony and fun day—under the Jockey Club–supported “Clap—Innovative Education Journey: Shining Stars” programme organised by YMCACOC—brought together guests, industry partners, mentors and families to celebrate 36 SEN graduates.",
+  },
+  "news.n4.p2": {
+    zh: "計劃糅合職前培訓與生涯發展指導，由 YMCACOC 聯同 Generation 香港、多所特殊學校及香港青年工業家協會等共同推行。學員接受機械人操作、客戶服務與生涯規劃訓練，並於第三階段接受職前班及職業配對；連同首屆，計劃已累計培育近 80 位 SEN 青年。",
+    en: "The initiative blends pre-employment training and career guidance, delivered by YMCACOC with Generation Hong Kong, partner special schools and the Young Industrialists Association. Learners train in robot operations, customer service and career planning, then join a pre-job class and job matching. With the first cohort, nearly 80 SEN youth have been trained.",
+  },
+  "news.n4.p3": {
+    zh: "RoboCore Technology 行政總裁兼香港青年工業家協會副會長林朗熙先生指，SEN 青年的加入為團隊注入正能量，令公司凝聚向心力與歸屬感，整體工作效率與生產力亦大幅提升。其他僱主亦分享 SEN 員工在專注、穩定、守時及巡查接待等工作上的表現，肯定其職場價值。",
+    en: "RoboCore Technology CEO and YHKA vice chairman Mr Vincent Lam said SEN hires inject positive energy, strengthen belonging and significantly lift efficiency and productivity. Fellow employers also praised focus, reliability, punctuality and solid performance in inspection, reception and admin roles.",
+  },
+
+  // Instagram reel — list card only (external)
+  "news.n5.date": { zh: "Instagram", en: "Instagram" },
+  "news.n5.source": { zh: "Instagram", en: "Instagram" },
+  "news.n5.title": {
+    zh: "博歌科技 Instagram 動態短片",
+    en: "Robocore on Instagram — latest reel",
+  },
+  "news.n5.desc": {
+    zh: "觀看 Robocore 最新短片動態（將開啟 Instagram）。",
+    en: "Watch Robocore’s latest short video (opens Instagram).",
   },
 
   // Warranty

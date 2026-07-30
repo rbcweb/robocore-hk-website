@@ -150,7 +150,7 @@ export function renderHeader(current = "index.html") {
       <nav class="nav" id="primary-nav" aria-label="Primary">
         ${productsMega(current)}
         ${navLink("solutions.html", "nav.solutions", current)}
-        ${navLink("news.html", "nav.news", current)}
+        ${navLink("news.html", "nav.news", current.startsWith("news") ? "news.html" : current)}
         ${navLink("joinus.html", "nav.join", current)}
         ${navLink("contactus.html", "nav.contact", current)}
       </nav>

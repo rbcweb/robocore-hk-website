@@ -24,6 +24,8 @@ const pages = [
   'sh1',
   'puductor',
   'news',
+  'news-am730-sen-2026',
+  'news-oncc-sen-2026',
   'joinus',
   'contactus',
   'temiwarranty',
