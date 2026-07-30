@@ -471,6 +471,7 @@ export const dict = {
   // am730 — SEN robot ambassador graduation
   "news.n3.date": { zh: "2026年7月28日", en: "28 Jul 2026" },
   "news.n3.source": { zh: "am730", en: "am730" },
+  "news.n3.sourceChip": { zh: "am730", en: "am730" },
   "news.n3.title": {
     zh: "第二屆「商場機械人服務大使」課程畢業　SEN 青年憑科技闖出智慧職場",
     en: "2nd “Shopping Mall Robot Service Ambassador” course graduates—SEN youth step into smart service roles",
@@ -499,6 +500,7 @@ export const dict = {
   // on.cc — same event angle
   "news.n4.date": { zh: "2026年7月27日", en: "27 Jul 2026" },
   "news.n4.source": { zh: "on.cc 東網", en: "on.cc" },
+  "news.n4.sourceChip": { zh: "on.cc", en: "on.cc" },
   "news.n4.title": {
     zh: "賽馬會第二屆「商場機械人服務大使」課程頒獎　36 位 SEN 青年邁向智慧服務",
     en: "HKJC 2nd Robot Service Ambassador awards—36 SEN youth advance in smart services",
@@ -527,6 +529,7 @@ export const dict = {
   // Instagram reel — list card only (external)
   "news.n5.date": { zh: "Instagram", en: "Instagram" },
   "news.n5.source": { zh: "Instagram", en: "Instagram" },
+  "news.n5.sourceChip": { zh: "IG", en: "IG" },
   "news.n5.title": {
     zh: "博歌科技 Instagram 動態短片",
     en: "Robocore on Instagram — latest reel",
