@@ -31,6 +31,8 @@ const pages = [
   'temiwarranty',
 ];
 
+const pageSet = new Set(pages.filter((p) => p !== 'index'));
+
 const input = Object.fromEntries(
   pages.map((name) => [
     name,
@@ -39,13 +41,39 @@ const input = Object.fromEntries(
 );
 
 // GitHub project pages: BASE_PATH=/repo-name/
-// Custom domain later: BASE_PATH=/ (default)
+// Custom domain: BASE_PATH=/ (default)
 const base = process.env.BASE_PATH || '/';
+
+/** Dev server: /products/ → products.html so clean links work locally */
+function cleanUrlDevPlugin() {
+  return {
+    name: 'clean-url-dev',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (!req.url || req.method !== 'GET') return next();
+        const url = req.url.split('?')[0];
+        const baseTrim = base.replace(/\/$/, '') || '';
+        let path = url;
+        if (baseTrim && path.startsWith(baseTrim)) {
+          path = path.slice(baseTrim.length) || '/';
+        }
+        // /products or /products/ → /products.html
+        const m = path.match(/^\/([a-z0-9-]+)\/?$/i);
+        if (m && pageSet.has(m[1])) {
+          const q = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+          req.url = `${baseTrim}/${m[1]}.html${q}`;
+        }
+        next();
+      });
+    },
+  };
+}
 
 export default defineConfig({
   base,
   root: '.',
   publicDir: 'public',
+  plugins: [cleanUrlDevPlugin()],
   build: {
     outDir: 'dist',
     emptyOutDir: true,

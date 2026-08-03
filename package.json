@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/clean-urls.mjs",
     "preview": "vite preview",
-    "build:pages": "BASE_PATH=/${npm_package_name}/ vite build"
+    "build:pages": "BASE_PATH=/${npm_package_name}/ vite build && BASE_PATH=/${npm_package_name}/ node scripts/clean-urls.mjs"
   },
   "devDependencies": {
     "vite": "^6.3.5"

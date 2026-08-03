@@ -1,14 +1,16 @@
 import { applyI18n, detectLang } from "./i18n.js";
 import { mountShell } from "./shell.js";
 import { renderSpecsTable } from "./data/temi-specs.js";
+import { pageHref, normalizePageId, hrefToPageId } from "./paths.js";
 
 function syncMegaActiveFromHash() {
-  const page = document.body.dataset.page || "";
+  const page = normalizePageId(document.body.dataset.page || "");
   document.querySelectorAll(".mega-model[href], .mega-extra[href]").forEach((a) => {
     const href = a.getAttribute("href") || "";
-    const [base, hash] = href.split("#");
+    const [pathPart, hash] = href.split("#");
+    const hrefId = hrefToPageId(pathPart);
     let active = false;
-    if (page === base || page === href) {
+    if (hrefId && hrefId === page) {
       if (!hash) active = true;
       else active = location.hash.replace(/^#/, "") === hash;
     }
@@ -197,61 +199,72 @@ function initContactForm() {
 
 const LAST_PRODUCT_KEY = "robocore:lastProduct";
 /** Series pages that host multiple product cards with #anchors (like Pudu) */
-const SERIES_PAGES = new Set(["pudu.html", "temifamily.html"]);
-const CATALOG_PAGES = new Set(["products.html", "index.html"]);
+const SERIES_PAGES = new Set(["pudu", "temifamily"]);
+const CATALOG_PAGES = new Set(["products", "index"]);
+const SKIP_CURRENT_SLUGS = new Set(["solutions", "temifamily", "pudu"]);
 
 function seriesKey(page, id) {
-  return `${page}#${id}`;
+  return `${normalizePageId(page)}#${id}`;
 }
 
-/** Product detail / anchor pages worth remembering for catalog highlight */
+function normalizeStoredKey(key) {
+  if (!key) return "";
+  if (key.includes("#")) {
+    const [p, id] = key.split("#");
+    return seriesKey(p, id);
+  }
+  return normalizePageId(key);
+}
+
+/** Product detail pages worth remembering for catalog highlight */
 const PRODUCT_DETAIL_PAGES = new Set([
-  "temiv3.html",
-  "temiplatform.html",
-  "temigo.html",
-  "temigopro.html",
-  "blackjack.html",
-  "fourcast.html",
-  "pudubot.html",
-  "bellabot.html",
-  "holabot.html",
-  "flashbot.html",
-  "cc1.html",
-  "mt1.html",
-  "sh1.html",
-  "puductor.html",
+  "temiv3",
+  "temiplatform",
+  "temigo",
+  "temigopro",
+  "blackjack",
+  "fourcast",
+  "pudubot",
+  "bellabot",
+  "holabot",
+  "flashbot",
+  "cc1",
+  "mt1",
+  "sh1",
+  "puductor",
 ]);
 
-/** Legacy pudu.html#id → detail page */
+/** Legacy /pudu/#id → /detail/ */
 const PUDU_HASH_REDIRECT = {
-  pudubot: "pudubot.html",
-  bellabot: "bellabot.html",
-  holabot: "holabot.html",
-  flashbot: "flashbot.html",
-  cc1: "cc1.html",
-  mt1: "mt1.html",
-  sh1: "sh1.html",
-  puductor: "puductor.html",
+  pudubot: "pudubot",
+  bellabot: "bellabot",
+  holabot: "holabot",
+  flashbot: "flashbot",
+  cc1: "cc1",
+  mt1: "mt1",
+  sh1: "sh1",
+  puductor: "puductor",
 };
 
 function rememberCurrentProduct(page) {
-  if (!page || CATALOG_PAGES.has(page)) return;
+  const p = normalizePageId(page);
+  if (!p || CATALOG_PAGES.has(p)) return;
   const hash = location.hash.replace(/^#/, "");
-  if (SERIES_PAGES.has(page)) {
-    if (hash) sessionStorage.setItem(LAST_PRODUCT_KEY, seriesKey(page, hash));
+  if (SERIES_PAGES.has(p)) {
+    if (hash) sessionStorage.setItem(LAST_PRODUCT_KEY, seriesKey(p, hash));
     return;
   }
-  if (PRODUCT_DETAIL_PAGES.has(page) || /\.html$/.test(page)) {
-    sessionStorage.setItem(LAST_PRODUCT_KEY, page);
+  if (PRODUCT_DETAIL_PAGES.has(p)) {
+    sessionStorage.setItem(LAST_PRODUCT_KEY, p);
   }
 }
 
 function markCurrentProductCards(activeKey) {
-  const page = document.body.dataset.page || "";
+  const page = normalizePageId(document.body.dataset.page || "");
   const hash = location.hash.replace(/^#/, "");
-  const remembered = sessionStorage.getItem(LAST_PRODUCT_KEY) || "";
+  const remembered = normalizeStoredKey(sessionStorage.getItem(LAST_PRODUCT_KEY) || "");
   const current =
-    activeKey ||
+    (activeKey ? normalizeStoredKey(activeKey) : null) ||
     (SERIES_PAGES.has(page) && hash ? seriesKey(page, hash) : null) ||
     (!SERIES_PAGES.has(page) && !CATALOG_PAGES.has(page) ? page : null) ||
     remembered;
@@ -267,18 +280,19 @@ function markCurrentProductCards(activeKey) {
 
   // Catalog link cards (products / index)
   document.querySelectorAll("a.card[href], a.product-tile[href]").forEach((a) => {
-    const href = (a.getAttribute("href") || "").split("?")[0];
-    if (!href || href === "solutions.html" || href === "temifamily.html" || href === "pudu.html") {
+    const href = (a.getAttribute("href") || "").split("?")[0].split("#")[0];
+    const hrefId = hrefToPageId(href);
+    if (!hrefId || SKIP_CURRENT_SLUGS.has(hrefId)) {
       a.classList.remove("is-current");
       return;
     }
-    const on = Boolean(current) && href === current;
+    const on = Boolean(current) && (hrefId === current || href === current);
     a.classList.toggle("is-current", on);
   });
 }
 
 function initCurrentProductCards() {
-  const page = document.body.dataset.page || "";
+  const page = normalizePageId(document.body.dataset.page || "");
   rememberCurrentProduct(page);
   markCurrentProductCards();
 
@@ -325,8 +339,8 @@ function initCurrentProductCards() {
         markCurrentProductCards(key);
         if (!lockFromHash) {
           document.querySelectorAll(".mega-model[href]").forEach((a) => {
-            const href = a.getAttribute("href") || "";
-            a.classList.toggle("is-active", href === key);
+            const hrefId = hrefToPageId(a.getAttribute("href") || "");
+            a.classList.toggle("is-active", hrefId === bestId);
           });
         }
       }
@@ -337,13 +351,13 @@ function initCurrentProductCards() {
 }
 
 function boot() {
-  const page = document.body.dataset.page || "index.html";
-  // Old deep links: pudu.html#bellabot → bellabot.html
-  if (page === "pudu.html") {
+  const page = normalizePageId(document.body.dataset.page || "index");
+  // Old deep links: /pudu/#bellabot → /bellabot/
+  if (page === "pudu") {
     const hash = location.hash.replace(/^#/, "");
     const dest = PUDU_HASH_REDIRECT[hash];
     if (dest) {
-      location.replace(dest + location.search);
+      location.replace(pageHref(dest) + location.search);
       return;
     }
   }

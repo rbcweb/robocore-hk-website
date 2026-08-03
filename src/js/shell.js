@@ -1,8 +1,6 @@
 /** Shared header & footer injection */
 
-// GitHub Pages lives under /repo-name/ — never hardcode root-absolute /assets/
-const BASE = import.meta.env.BASE_URL || "/";
-const asset = (path) => `${BASE}${String(path).replace(/^\//, "")}`;
+import { BASE, asset, pageHref, normalizePageId, hrefToPageId } from "./paths.js";
 
 /** Monochrome SVGs — inherit currentColor (soft → accent on hover) */
 const SOCIAL_ICONS = {
@@ -35,66 +33,94 @@ const PRODUCT_NAV = {
     {
       id: "temi",
       labelKey: "nav.brand.temi",
-      overviewHref: "temifamily.html",
+      overview: "temifamily",
       overviewKey: "nav.exploreSeries",
       models: [
-        { name: "temi v3", href: "temiv3.html", typeKey: "nav.type.service" },
-        { name: "temi Platform", href: "temiplatform.html", typeKey: "nav.type.chassis" },
-        { name: "temi GO", href: "temigo.html", typeKey: "nav.type.delivery" },
-        { name: "temi GO PRO", href: "temigopro.html", typeKey: "nav.type.quadDelivery" },
-        { name: "Blackjack", href: "blackjack.html", typeKey: "nav.type.patrol" },
-        { name: "Fourcast", href: "fourcast.html", typeKey: "nav.type.ad" },
+        { name: "temi v3", slug: "temiv3", typeKey: "nav.type.service" },
+        { name: "temi Platform", slug: "temiplatform", typeKey: "nav.type.chassis" },
+        { name: "temi GO", slug: "temigo", typeKey: "nav.type.delivery" },
+        { name: "temi GO PRO", slug: "temigopro", typeKey: "nav.type.quadDelivery" },
+        { name: "Blackjack", slug: "blackjack", typeKey: "nav.type.patrol" },
+        { name: "Fourcast", slug: "fourcast", typeKey: "nav.type.ad" },
       ],
     },
     {
       id: "pudu",
       labelKey: "nav.brand.pudu",
-      overviewHref: "pudu.html",
+      overview: "pudu",
       overviewKey: "nav.exploreSeries",
       models: [
-        { name: "PuduBot 2", href: "pudubot.html", typeKey: "nav.type.foodDelivery" },
-        { name: "BellaBot", href: "bellabot.html", typeKey: "nav.type.premiumFood" },
-        { name: "HolaBot", href: "holabot.html", typeKey: "nav.type.premiumDelivery" },
-        { name: "FlashBot", href: "flashbot.html", typeKey: "nav.type.buildingDelivery" },
-        { name: "CC1", href: "cc1.html", typeKey: "nav.type.sweepScrub" },
-        { name: "MT1", href: "mt1.html", typeKey: "nav.type.bulkWaste" },
-        { name: "SH1", href: "sh1.html", typeKey: "nav.type.uprightScrub" },
-        { name: "Puductor 2", href: "puductor.html", typeKey: "nav.type.uv" },
+        { name: "PuduBot 2", slug: "pudubot", typeKey: "nav.type.foodDelivery" },
+        { name: "BellaBot", slug: "bellabot", typeKey: "nav.type.premiumFood" },
+        { name: "HolaBot", slug: "holabot", typeKey: "nav.type.premiumDelivery" },
+        { name: "FlashBot", slug: "flashbot", typeKey: "nav.type.buildingDelivery" },
+        { name: "CC1", slug: "cc1", typeKey: "nav.type.sweepScrub" },
+        { name: "MT1", slug: "mt1", typeKey: "nav.type.bulkWaste" },
+        { name: "SH1", slug: "sh1", typeKey: "nav.type.uprightScrub" },
+        { name: "Puductor 2", slug: "puductor", typeKey: "nav.type.uv" },
       ],
     },
   ],
   extras: [
-    { name: "ZPINE", href: "zpine.html", typeKey: "nav.type.multiPlatform" },
-    { nameKey: "lift.title", href: "liftmodule.html", typeKey: "nav.type.lift" },
+    { name: "ZPINE", slug: "zpine", typeKey: "nav.type.multiPlatform" },
+    { nameKey: "lift.title", slug: "liftmodule", typeKey: "nav.type.lift" },
   ],
 };
 
+const PRODUCT_SECTION_SLUGS = new Set([
+  "products",
+  "temifamily",
+  "pudu",
+  "zpine",
+  "liftmodule",
+  "temiv3",
+  "temiplatform",
+  "temigo",
+  "temigopro",
+  "blackjack",
+  "fourcast",
+  "pudubot",
+  "bellabot",
+  "holabot",
+  "flashbot",
+  "cc1",
+  "mt1",
+  "sh1",
+  "puductor",
+]);
+
 function isActive(current, href) {
-  const [base, hash] = href.split("#");
-  if (current !== base && current !== href) return false;
+  const [pathPart, hash] = String(href).split("#");
+  const hrefId = hrefToPageId(pathPart);
+  const curId = normalizePageId(current);
+  if (!hrefId || hrefId !== curId) return false;
   if (!hash) return true;
   const currentHash = (typeof location !== "undefined" ? location.hash : "").replace(/^#/, "");
   return currentHash === hash;
 }
 
-function navLink(href, key, current) {
+function navLink(slug, key, current) {
+  const href = pageHref(slug);
   const active = isActive(current, href) ? " is-active" : "";
   return `<a href="${href}" class="nav-link${active}" data-i18n="${key}"></a>`;
 }
 
 function productsMega(current) {
+  const cur = normalizePageId(current);
   const brands = PRODUCT_NAV.brands
     .map((brand) => {
+      const overviewHref = pageHref(brand.overview);
       const models = brand.models
         .map((m) => {
-          const active = isActive(current, m.href) ? " is-active" : "";
-          return `<a class="mega-model${active}" href="${m.href}"><span class="mega-model-name">${m.name}</span><span class="mega-model-type" data-i18n="${m.typeKey}"></span></a>`;
+          const href = pageHref(m.slug);
+          const active = isActive(cur, href) ? " is-active" : "";
+          return `<a class="mega-model${active}" href="${href}"><span class="mega-model-name">${m.name}</span><span class="mega-model-type" data-i18n="${m.typeKey}"></span></a>`;
         })
         .join("");
       return `
         <div class="mega-col">
-          <a class="mega-brand" href="${brand.overviewHref}" data-i18n="${brand.labelKey}"></a>
-          <a class="mega-overview" href="${brand.overviewHref}" data-i18n="${brand.overviewKey}"></a>
+          <a class="mega-brand" href="${overviewHref}" data-i18n="${brand.labelKey}"></a>
+          <a class="mega-overview" href="${overviewHref}" data-i18n="${brand.overviewKey}"></a>
           <div class="mega-models">${models}</div>
         </div>`;
     })
@@ -108,16 +134,19 @@ function productsMega(current) {
       const type = e.typeKey
         ? `<span class="mega-extra-type" data-i18n="${e.typeKey}"></span>`
         : "";
-      const active = isActive(current, e.href) ? " is-active" : "";
-      return `<a class="mega-extra${active}" href="${e.href}">${name}${type}</a>`;
+      const href = pageHref(e.slug);
+      const active = isActive(cur, href) ? " is-active" : "";
+      return `<a class="mega-extra${active}" href="${href}">${name}${type}</a>`;
     })
     .join("");
+
+  const productsActive = PRODUCT_SECTION_SLUGS.has(cur) ? " is-active" : "";
 
   return `
     <div class="nav-item nav-item-mega" data-mega>
       <button
         type="button"
-        class="nav-link nav-mega-trigger${current === "products.html" || current.startsWith("temi") || current === "pudu.html" || current === "temifamily.html" || current === "zpine.html" || current === "liftmodule.html" || current === "blackjack.html" || current === "fourcast.html" || current === "pudubot.html" || current === "bellabot.html" || current === "holabot.html" || current === "flashbot.html" || current === "cc1.html" || current === "mt1.html" || current === "sh1.html" || current === "puductor.html" ? " is-active" : ""}"
+        class="nav-link nav-mega-trigger${productsActive}"
         aria-expanded="false"
         aria-controls="products-mega"
         data-mega-trigger
@@ -127,7 +156,7 @@ function productsMega(current) {
       </button>
       <div class="mega-panel" id="products-mega" data-mega-panel hidden>
         <div class="mega-inner">
-          <a class="mega-all" href="products.html" data-i18n="nav.allProducts"></a>
+          <a class="mega-all" href="${pageHref("products")}" data-i18n="nav.allProducts"></a>
           <div class="mega-grid">
             ${brands}
           </div>
@@ -140,19 +169,21 @@ function productsMega(current) {
     </div>`;
 }
 
-export function renderHeader(current = "index.html") {
+export function renderHeader(current = "index") {
+  const cur = normalizePageId(current);
+  const newsCurrent = cur.startsWith("news") ? "news" : cur;
   return `
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a class="logo" href="index.html" aria-label="Robocore">
+      <a class="logo" href="${pageHref("index")}" aria-label="Robocore">
         <img src="${asset("assets/logo/robocore-logo.png")}" alt="Robocore" width="200" height="52" />
       </a>
       <nav class="nav" id="primary-nav" aria-label="Primary">
-        ${productsMega(current)}
-        ${navLink("news.html", "nav.news", current.startsWith("news") ? "news.html" : current)}
-        ${navLink("solutions.html", "nav.solutions", current)}
-        ${navLink("joinus.html", "nav.join", current)}
-        ${navLink("contactus.html", "nav.contact", current)}
+        ${productsMega(cur)}
+        ${navLink("news", "nav.news", newsCurrent)}
+        ${navLink("solutions", "nav.solutions", cur)}
+        ${navLink("joinus", "nav.join", cur)}
+        ${navLink("contactus", "nav.contact", cur)}
       </nav>
       <div class="header-actions">
         <div class="lang-switch" role="group" aria-label="Language">
@@ -173,7 +204,7 @@ export function renderFooter() {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="logo" href="index.html">
+          <a class="logo" href="${pageHref("index")}">
             <img src="${asset("assets/logo/robocore-logo.png")}" alt="Robocore" width="140" height="36" />
           </a>
           <p data-i18n="common.member" style="margin-top:1rem"></p>
@@ -181,18 +212,18 @@ export function renderFooter() {
         </div>
         <div class="footer-col">
           <h4 data-i18n="common.products"></h4>
-          <a href="products.html" data-i18n="nav.allProducts"></a>
-          <a href="temifamily.html" data-i18n="nav.brand.temi"></a>
-          <a href="pudu.html" data-i18n="nav.brand.pudu"></a>
-          <a href="zpine.html">ZPINE</a>
-          <a href="temiwarranty.html" data-i18n="nav.warranty"></a>
+          <a href="${pageHref("products")}" data-i18n="nav.allProducts"></a>
+          <a href="${pageHref("temifamily")}" data-i18n="nav.brand.temi"></a>
+          <a href="${pageHref("pudu")}" data-i18n="nav.brand.pudu"></a>
+          <a href="${pageHref("zpine")}">ZPINE</a>
+          <a href="${pageHref("temiwarranty")}" data-i18n="nav.warranty"></a>
         </div>
         <div class="footer-col">
           <h4 data-i18n="common.companyCol"></h4>
-          <a href="solutions.html" data-i18n="nav.solutions"></a>
-          <a href="news.html" data-i18n="nav.news"></a>
-          <a href="joinus.html" data-i18n="nav.join"></a>
-          <a href="contactus.html" data-i18n="nav.contact"></a>
+          <a href="${pageHref("solutions")}" data-i18n="nav.solutions"></a>
+          <a href="${pageHref("news")}" data-i18n="nav.news"></a>
+          <a href="${pageHref("joinus")}" data-i18n="nav.join"></a>
+          <a href="${pageHref("contactus")}" data-i18n="nav.contact"></a>
         </div>
         <div class="footer-col">
           <h4 data-i18n="common.contactCta"></h4>
@@ -218,3 +249,6 @@ export function mountShell(currentPage) {
     el.innerHTML = renderSocials();
   });
 }
+
+// re-export for convenience
+export { BASE, asset, pageHref, normalizePageId };

@@ -38,6 +38,16 @@ npm run preview
 - **Build：** `BASE_PATH=/`（見 `.github/workflows/deploy.yml`）；`public/CNAME` = `robocore.ai`
 - 舊 project 路徑 `https://rbcweb.github.io/robocore-hk-website/` 不再作主入口
 
+### Clean URLs（無 `.html`）
+
+| 頁 | 網址 |
+|----|------|
+| 首頁 | `https://robocore.ai/` |
+| 產品 | `https://robocore.ai/products/` |
+| 詳情例 | `https://robocore.ai/temiv3/` |
+
+Build：`vite build` 後 `scripts/clean-urls.mjs` 把 `foo.html` → `foo/index.html`，並保留 `foo.html` 短 redirect 兼容舊連結。
+
 ## 聯絡
 
 - Email: info@robocore.ai  

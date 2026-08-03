@@ -138,8 +138,8 @@
 
 /* Soft temi gradient rule — thin, dark, fades at edges */
 .product-hero::after,
-body[data-page="index.html"] main > .hero::after,
-body[data-page="index.html"] main > .section:not(:last-of-type)::after {
+body[data-page="index"] main > .hero::after,
+body[data-page="index"] main > .section:not(:last-of-type)::after {
   content: "";
   position: absolute;
   left: 8%;
