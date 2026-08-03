@@ -61,30 +61,41 @@
   gap: 0.35rem;
 }
 
-/* Nav tab hover + active — soft green glow only, no outline frame */
+/* Nav tabs — accent text only, no green glow background */
 .nav-link:hover,
 .nav > a:hover {
   color: var(--accent);
-  background: rgba(29, 240, 162, 0.1);
+  background: transparent;
   border-radius: var(--radius-sm);
-  box-shadow: 0 0 20px rgba(29, 240, 162, 0.22);
-  text-shadow: 0 0 10px rgba(29, 240, 162, 0.4);
+  box-shadow: none;
+  text-shadow: none;
 }
 
 .nav-link.is-active,
 .nav > a.is-active {
   color: var(--accent);
-  background: rgba(29, 240, 162, 0.12);
+  background: transparent;
   border-radius: var(--radius-sm);
-  box-shadow: 0 0 24px rgba(29, 240, 162, 0.28);
-  text-shadow: 0 0 12px rgba(29, 240, 162, 0.45);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.nav-mega-trigger:hover,
+.nav-mega-trigger.is-active,
+.nav-item-mega.is-open .nav-mega-trigger {
+  color: var(--accent);
+  background: transparent;
+  box-shadow: none;
+  text-shadow: none;
 }
 
 .nav-link:hover .nav-caret,
 .nav-link.is-active .nav-caret,
-.nav-mega-trigger.is-active .nav-caret {
+.nav-mega-trigger:hover .nav-caret,
+.nav-mega-trigger.is-active .nav-caret,
+.nav-item-mega.is-open .nav-mega-trigger .nav-caret {
   opacity: 1;
-  filter: drop-shadow(0 0 6px rgba(29, 240, 162, 0.55));
+  filter: none;
 }
 
 .nav-item-mega {
@@ -210,15 +221,15 @@
   transition: color var(--transition);
 }
 
-/* Mega product row — soft green glow only (match top nav) */
+/* Mega product row — accent text only, no green glow background */
 .mega-model:hover {
-  background: rgba(29, 240, 162, 0.1) !important;
-  box-shadow: 0 0 20px rgba(29, 240, 162, 0.22);
+  background: transparent !important;
+  box-shadow: none;
 }
 
 .mega-model:hover .mega-model-name {
   color: var(--accent);
-  text-shadow: 0 0 10px rgba(29, 240, 162, 0.4);
+  text-shadow: none;
 }
 
 .mega-model:hover .mega-model-type {
@@ -226,13 +237,13 @@
 }
 
 .mega-model.is-active {
-  background: rgba(29, 240, 162, 0.12) !important;
-  box-shadow: 0 0 24px rgba(29, 240, 162, 0.28);
+  background: transparent !important;
+  box-shadow: none;
 }
 
 .mega-model.is-active .mega-model-name {
   color: var(--accent);
-  text-shadow: 0 0 12px rgba(29, 240, 162, 0.45);
+  text-shadow: none;
 }
 
 .mega-model.is-active .mega-model-type {
@@ -285,8 +296,8 @@
 
 .mega-extra:hover {
   color: var(--accent) !important;
-  background: rgba(29, 240, 162, 0.1) !important;
-  box-shadow: 0 0 20px rgba(29, 240, 162, 0.22);
+  background: rgba(255, 255, 255, 0.03) !important;
+  box-shadow: none;
 }
 
 .mega-extra:hover .mega-extra-type {
@@ -295,8 +306,8 @@
 
 .mega-extra.is-active {
   color: var(--accent) !important;
-  background: rgba(29, 240, 162, 0.12) !important;
-  box-shadow: 0 0 24px rgba(29, 240, 162, 0.28);
+  background: rgba(255, 255, 255, 0.03) !important;
+  box-shadow: none;
 }
 
 .mega-extra.is-active .mega-extra-type {
