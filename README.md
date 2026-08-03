@@ -31,11 +31,12 @@ npm run preview
 
 → **[`docs/WIX_REDIRECT_SETUP.md`](docs/WIX_REDIRECT_SETUP.md)**
 
-### 之後用 Wix domain（DNS）
+### 自訂域名（已啟用）
 
-1. GitHub Pages → Custom domain 填入你哋域名（例如 `www.robocore.ai`）
-2. 喺 Wix domain DNS 加 GitHub 提示嘅 **CNAME / A 記錄**
-3. 自訂域名生效後，可將 `BASE_PATH` 改為 `/` 再 deploy（見 `vite.config.js`）
+- **正式網址：** https://robocore.ai （冇 www；www 亦應 CNAME 到 `rbcweb.github.io`）
+- **DNS：** apex `A` → GitHub Pages IPs；`www` → `rbcweb.github.io`（域名 DNS 多在 Wix 管理）
+- **Build：** `BASE_PATH=/`（見 `.github/workflows/deploy.yml`）；`public/CNAME` = `robocore.ai`
+- 舊 project 路徑 `https://rbcweb.github.io/robocore-hk-website/` 不再作主入口
 
 ## 聯絡
 
