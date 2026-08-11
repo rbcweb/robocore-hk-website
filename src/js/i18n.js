@@ -17,19 +17,36 @@ export const dict = {
   "nav.sol.group.service": { zh: "服務與場域", en: "Service & venues" },
   "nav.sol.group.commerce": { zh: "商業與體驗", en: "Commerce & experience" },
   // Mega type labels: EN is source of truth; ZH mirrors EN meaning
-  "nav.type.service": { zh: "多功能智能大使", en: "Multi-purpose smart ambassador" },
-  "nav.type.chassis": { zh: "導航底盤", en: "Navigation chassis" },
-  "nav.type.delivery": { zh: "配送機械人", en: "Delivery robot" },
-  "nav.type.patrol": { zh: "巡邏與巡檢", en: "Patrol & inspection" },
-  "nav.type.ad": { zh: "流動廣告", en: "Mobile advertising" },
+  "nav.type.service": {
+    zh: "AI 驅動，企業級 SDK",
+    en: "AI in Motion, enterprise-grade SDK",
+  },
+  "nav.type.chassis": {
+    zh: "可客製機械人，自主導航",
+    en: "Customizable robotics, autonomous navigation",
+  },
+  "nav.type.delivery": {
+    zh: "流暢開放式托盤服務",
+    en: "Seamless open-tray service",
+  },
+  "nav.type.gopro": {
+    zh: "四門跨層服務，支援電梯",
+    en: "Quad-door multi-floor service, elevator-enabled",
+  },
+  "nav.type.patrol": {
+    zh: "自主安防與巡檢",
+    en: "Autonomous security and inspection",
+  },
+  "nav.type.ad": {
+    zh: "流動廣告，四面顯示",
+    en: "Mobile advertising, four-sided display",
+  },
   "nav.type.foodDelivery": { zh: "開放式托盤配送", en: "Open-tray delivery" },
   "nav.type.premiumFood": { zh: "開放式托盤配送", en: "Open-tray delivery" },
-  "nav.type.premiumDelivery": { zh: "半開放式托盤配送", en: "Semi open-tray delivery" },
   "nav.type.buildingDelivery": { zh: "四門配送", en: "Quad-door delivery" },
   "nav.type.sweepScrub": { zh: "四合一地面清潔", en: "4-in-1 floor cleaning" },
   "nav.type.bulkWaste": { zh: "大型垃圾清潔", en: "Large waste cleaning" },
   "nav.type.uprightScrub": { zh: "直立洗地機", en: "Upright scrubber" },
-  "nav.type.uv": { zh: "紫外線消毒", en: "UV disinfection" },
   "nav.type.multiPlatform": { zh: "多機械人平台", en: "Multi-robot platform" },
   "nav.type.lift": { zh: "電梯整合系統", en: "Elevator integration system" },
   // Solutions mega — short type line (same layout as product mega)
@@ -164,7 +181,10 @@ export const dict = {
     zh: "適用餐廳、美食廣場與零售的食品飲料與托盤配送，平板、語音與 temi Center 控制。",
     en: "Ideal for F&B and open-tray delivery in restaurants, food courts and retail—tablet, voice and temi Center control.",
   },
-  "prod.gopro.tag": { zh: "四門配送", en: "Quad-door delivery" },
+  "prod.gopro.tag": {
+    zh: "四門跨層服務，支援電梯",
+    en: "Quad-door multi-floor service, elevator-enabled",
+  },
   "prod.gopro.desc": {
     zh: "temi GO 高級四門版本，跨樓層配送；獨立電門與可拆隔板，點對點自主運送。",
     en: "Premium four-door temi GO for multi-floor delivery—independent doors, removable partitions, A-to-B autonomy.",
@@ -289,15 +309,6 @@ export const dict = {
   "pudu.pudubot.c2": { zh: "高頻送餐", en: "High-frequency runs" },
   "pudu.pudubot.c3": { zh: "多場景", en: "Multi-scenario" },
 
-  "pudu.holabot.tag": { zh: "高端配送機械人", en: "Semi open-tray delivery" },
-  "pudu.holabot.desc": {
-    zh: "面向更高負載與專業配送需求的高端機型，支援托盤／艙體配送，適合需要穩妥運送餐飲、物料或備品的商業場所。",
-    en: "A premium model for higher capacity and professional delivery, supporting tray or compartment transport for food, supplies or amenities in commercial venues.",
-  },
-  "pudu.holabot.c1": { zh: "專業配送", en: "Pro delivery" },
-  "pudu.holabot.c2": { zh: "穩定載運", en: "Stable payload" },
-  "pudu.holabot.c3": { zh: "商業場所", en: "Commercial venues" },
-
   "pudu.flashbot.tag": { zh: "樓宇配送機械人", en: "Quad-door delivery" },
   "pudu.flashbot.desc": {
     zh: "專為樓宇場景設計的配送機械人，適用酒店客房送物、寫字樓文件／備品、商場後勤等跨區域、跨樓層配送流程。",
@@ -333,15 +344,6 @@ export const dict = {
   "pudu.sh1.c1": { zh: "直立靈活", en: "Upright & agile" },
   "pudu.sh1.c2": { zh: "走廊大堂", en: "Corridors & lobbies" },
   "pudu.sh1.c3": { zh: "智慧洗地", en: "Smart scrubbing" },
-
-  "pudu.puductor.tag": { zh: "紫外線清潔機械人", en: "UV disinfection" },
-  "pudu.puductor.desc": {
-    zh: "Puductor 2 以紫外線消毒為核心，可在離峰時段對室內空間進行自動化消殺，適合醫療、教育、酒店與對衛生要求較高的場所。",
-    en: "Puductor 2 focuses on UV disinfection for automated sanitising of indoor spaces during off-peak hours—suited to healthcare, education, hospitality and hygiene-critical sites.",
-  },
-  "pudu.puductor.c1": { zh: "UV 消毒", en: "UV disinfection" },
-  "pudu.puductor.c2": { zh: "醫療公共", en: "Healthcare & public" },
-  "pudu.puductor.c3": { zh: "離峰作業", en: "Off-peak ops" },
 
   "pudu.ctaTitle": {
     zh: "想了解邊款 Pudu 最適合你的場地？",

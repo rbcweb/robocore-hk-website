@@ -31,18 +31,6 @@ export const puduSpecs = {
     { label: { zh: "載運方式", en: "Load type" }, value: { zh: "開放式托盤", en: "Open-tray" } },
     { label: { zh: "應用場景", en: "Use cases" }, value: { zh: "正餐餐廳、酒店宴會、高端餐飲", en: "Fine dining, hotel banquets, premium F&B" } },
   ],
-  holabot: [
-    { label: { zh: "類型", en: "Type" }, value: { zh: "高端配送機械人", en: "Premium delivery robot" } },
-    { label: { zh: "尺寸（長 × 寬 × 高）", en: "Dimensions (L × W × H)" }, value: { zh: "約 542 × 534 × 1,228 mm", en: "Approx. 542 × 534 × 1,228 mm" } },
-    { label: { zh: "機身重量", en: "Machine weight" }, value: { zh: "約 55–60 kg", en: "Approx. 55–60 kg" } },
-    { label: { zh: "最大載重", en: "Max. load" }, value: { zh: "最高約 30 kg（約 15 kg／層）", en: "Up to approx. 30 kg (approx. 15 kg per tray)" } },
-    { label: { zh: "螢幕", en: "Display" }, value: { zh: "約 10.1 吋 LCD", en: "Approx. 10.1\" LCD" } },
-    { label: { zh: "充電時間", en: "Charging time" }, value: { zh: "約 4.5 小時", en: "Approx. 4.5 hours" } },
-    { label: { zh: "電池續航", en: "Battery life" }, value: { zh: "約 14–16 小時（視配置）", en: "Approx. 14–16 hours (configuration-dependent)" } },
-    { label: { zh: "載運方式", en: "Load type" }, value: { zh: "半開放式托盤／艙體", en: "Semi open-tray / compartment" } },
-    { label: { zh: "機身材質", en: "Material" }, value: { zh: "ABS／航空鋁合金", en: "ABS / aviation aluminium alloy" } },
-    { label: { zh: "應用場景", en: "Use cases" }, value: { zh: "商業場所專業配送", en: "Professional delivery in commercial venues" } },
-  ],
   flashbot: [
     { label: { zh: "類型", en: "Type" }, value: { zh: "樓宇配送機械人", en: "Building delivery robot" } },
     { label: { zh: "尺寸（長 × 寬 × 高）", en: "Dimensions (L × W × H)" }, value: { zh: "約 538 × 534 × 1,052 mm", en: "Approx. 538 × 534 × 1,052 mm" } },
@@ -81,14 +69,5 @@ export const puduSpecs = {
     { label: { zh: "定位", en: "Role" }, value: { zh: "補足大型清潔機難以覆蓋的細節動線", en: "Complements larger machines where agility matters" } },
     { label: { zh: "導航", en: "Navigation" }, value: { zh: "智慧路徑與自主清潔", en: "Smart routing & autonomous cleaning" } },
     { label: { zh: "應用場景", en: "Use cases" }, value: { zh: "酒店、辦公、零售等室內地面保潔", en: "Hotels, offices, retail indoor floor care" } },
-  ],
-  puductor: [
-    { label: { zh: "類型", en: "Type" }, value: { zh: "紫外線消毒機械人", en: "UV disinfection robot" } },
-    { label: { zh: "技術", en: "Technology" }, value: { zh: "UV 消毒為核心；雙模式消毒", en: "UV disinfection core; dual disinfection modes" } },
-    { label: { zh: "消毒效果", en: "Disinfection rate" }, value: { zh: "可達約 99.99%（視使用條件）", en: "Up to approx. 99.99% (condition-dependent)" } },
-    { label: { zh: "覆蓋", en: "Coverage" }, value: { zh: "360° 消殺範圍", en: "360° disinfection coverage" } },
-    { label: { zh: "電池", en: "Battery" }, value: { zh: "長續航設計，支援自主導航作業", en: "Long runtime design with autonomous navigation" } },
-    { label: { zh: "時段", en: "Schedule" }, value: { zh: "適合離峰時段自動化消殺", en: "Automated sanitising during off-peak hours" } },
-    { label: { zh: "應用場景", en: "Use cases" }, value: { zh: "醫療、教育、酒店及高衛生要求場所", en: "Healthcare, education, hospitality, hygiene-critical sites" } },
   ],
 };

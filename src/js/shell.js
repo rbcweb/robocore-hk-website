@@ -39,7 +39,7 @@ const PRODUCT_NAV = {
         { name: "temi v3", slug: "temiv3", typeKey: "nav.type.service" },
         { name: "temi Platform", slug: "temiplatform", typeKey: "nav.type.chassis" },
         { name: "temi GO", slug: "temigo", typeKey: "nav.type.delivery" },
-        { name: "temi GO PRO", slug: "temigopro", typeKey: "nav.type.buildingDelivery" },
+        { name: "temi GO PRO", slug: "temigopro", typeKey: "nav.type.gopro" },
         { name: "Blackjack", slug: "blackjack", typeKey: "nav.type.patrol" },
         { name: "Fourcast", slug: "fourcast", typeKey: "nav.type.ad" },
       ],
@@ -52,12 +52,10 @@ const PRODUCT_NAV = {
       models: [
         { name: "PuduBot 2", slug: "pudubot", typeKey: "nav.type.foodDelivery" },
         { name: "BellaBot", slug: "bellabot", typeKey: "nav.type.premiumFood" },
-        { name: "HolaBot", slug: "holabot", typeKey: "nav.type.premiumDelivery" },
         { name: "FlashBot", slug: "flashbot", typeKey: "nav.type.buildingDelivery" },
         { name: "CC1", slug: "cc1", typeKey: "nav.type.sweepScrub" },
         { name: "MT1", slug: "mt1", typeKey: "nav.type.bulkWaste" },
         { name: "SH1", slug: "sh1", typeKey: "nav.type.uprightScrub" },
-        { name: "Puductor 2", slug: "puductor", typeKey: "nav.type.uv" },
       ],
     },
   ],
@@ -81,12 +79,10 @@ const PRODUCT_SECTION_SLUGS = new Set([
   "fourcast",
   "pudubot",
   "bellabot",
-  "holabot",
   "flashbot",
   "cc1",
   "mt1",
   "sh1",
-  "puductor",
 ]);
 
 /** Solutions mega — same structure as products (groups ≈ brands) */

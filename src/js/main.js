@@ -226,24 +226,20 @@ const PRODUCT_DETAIL_PAGES = new Set([
   "fourcast",
   "pudubot",
   "bellabot",
-  "holabot",
   "flashbot",
   "cc1",
   "mt1",
   "sh1",
-  "puductor",
 ]);
 
 /** Legacy /pudu/#id → /detail/ */
 const PUDU_HASH_REDIRECT = {
   pudubot: "pudubot",
   bellabot: "bellabot",
-  holabot: "holabot",
   flashbot: "flashbot",
   cc1: "cc1",
   mt1: "mt1",
   sh1: "sh1",
-  puductor: "puductor",
 };
 
 function rememberCurrentProduct(page) {
