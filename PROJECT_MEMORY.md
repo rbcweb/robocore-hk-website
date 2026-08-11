@@ -79,7 +79,7 @@
 
 - temi 與 Pudu 導覽對等；無獨立 Temi Family 主選單、無 temi Center 掣
 - 智能產品 Apple 式 mega（含產品類型標籤；**EN 為準**）
-- CC1 = 掃地洗地；MT1 = 大型垃圾
+- CC1 Pro = AI 四合一清潔（VSLAM+、50 Ah、5k–8k m²）；MT1 Max = 戶外／半戶外掃吸（85 kg、675 mm 高、60 Ah、IP54）；T300／T600 = 工業配送（約 300／600 kg）
 - Logo 必須用 `BASE_URL` / `asset()`，唔好 hardcode 錯 base
 - 導航順序：產品 → **新聞** → 方案 → 加入 → 聯絡
 - 英文新聞 CEO：**Roy Lim**（中：林朗熙）；唔好自創英文名

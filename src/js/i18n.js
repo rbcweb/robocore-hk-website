@@ -1,6 +1,9 @@
 /** Bilingual dictionary: zh (繁中) / en */
 export const dict = {
   // Nav
+  "gallery.front": { zh: "正面", en: "Front" },
+  "gallery.angle": { zh: "斜視", en: "3/4 view" },
+  "gallery.side": { zh: "側面", en: "Side" },
   "nav.products": { zh: "智能產品", en: "Products" },
   "nav.solutions": { zh: "智能方案", en: "Solutions" },
   "nav.news": { zh: "新聞", en: "News" },
@@ -44,8 +47,10 @@ export const dict = {
   "nav.type.foodDelivery": { zh: "開放式托盤配送", en: "Open-tray delivery" },
   "nav.type.premiumFood": { zh: "開放式托盤配送", en: "Open-tray delivery" },
   "nav.type.buildingDelivery": { zh: "四門配送", en: "Quad-door delivery" },
-  "nav.type.sweepScrub": { zh: "四合一地面清潔", en: "4-in-1 floor cleaning" },
-  "nav.type.bulkWaste": { zh: "大型垃圾清潔", en: "Large waste cleaning" },
+  "nav.type.t300": { zh: "工業配送 · 300 kg", en: "Industrial delivery · 300 kg" },
+  "nav.type.t600": { zh: "工業重載配送 · 600 kg", en: "Heavy-payload industrial delivery · 600 kg" },
+  "nav.type.sweepScrub": { zh: "AI 四合一商用清潔", en: "AI-powered 4-in-1 cleaning" },
+  "nav.type.bulkWaste": { zh: "AI 戶外／半戶外掃吸", en: "AI outdoor / semi-outdoor sweeping" },
   "nav.type.uprightScrub": { zh: "直立洗地機", en: "Upright scrubber" },
   "nav.type.multiPlatform": { zh: "多機械人平台", en: "Multi-robot platform" },
   "nav.type.lift": { zh: "電梯整合系統", en: "Elevator integration system" },
@@ -131,8 +136,8 @@ export const dict = {
   },
   "home.pillar3Title": { zh: "Pudu 系列", en: "Pudu Series" },
   "home.pillar3Desc": {
-    zh: "PuduBot、BellaBot 送餐配送，CC1 掃地洗地、MT1 大型垃圾、SH1 洗地與消毒方案。",
-    en: "PuduBot and BellaBot for F&B delivery, plus CC1 sweep & scrub, MT1 large waste, SH1 scrubbing and disinfection.",
+    zh: "PuduBot、BellaBot 送餐配送，FlashBot／T300／T600 物流，CC1 Pro 四合一清潔、MT1 Max 戶外掃吸、SH1 洗地方案。",
+    en: "PuduBot and BellaBot for F&B delivery, FlashBot / T300 / T600 logistics, CC1 Pro 4-in-1 cleaning, MT1 Max outdoor sweeping and SH1 scrubbing.",
   },
   "home.productsTitle": { zh: "我們的智能產品", en: "Our Smart Products" },
   "home.productsSub": {
@@ -211,8 +216,8 @@ export const dict = {
   },
   "prod.pudu.tag": { zh: "商用服務機械人", en: "Commercial Service Robots" },
   "prod.pudu.desc": {
-    zh: "普渡科技——PuduBot／BellaBot 送餐配送，CC1 掃地洗地、MT1 大型垃圾、SH1 洗地與消毒等完整產品線。",
-    en: "Pudu Robotics—PuduBot & BellaBot delivery, CC1 sweep & scrub, MT1 large waste, SH1 scrubbing and disinfection.",
+    zh: "普渡科技——PuduBot／BellaBot 送餐，FlashBot／T300／T600 物流，CC1 Pro 四合一清潔、MT1 Max 戶外掃吸、SH1 洗地等完整產品線。",
+    en: "Pudu Robotics—PuduBot & BellaBot delivery, FlashBot / T300 / T600 logistics, CC1 Pro 4-in-1 cleaning, MT1 Max outdoor sweeping and SH1 scrubbing.",
   },
   // Temi v3 extras
   "temiv3.title": { zh: "temi Robot V3", en: "temi Robot V3" },
@@ -318,23 +323,41 @@ export const dict = {
   "pudu.flashbot.c2": { zh: "跨層配送", en: "Multi-floor logistics" },
   "pudu.flashbot.c3": { zh: "後勤支援", en: "Back-of-house" },
 
-  "pudu.cc1.tag": { zh: "掃地洗地機械人", en: "4-in-1 floor cleaning" },
+  "pudu.cc1.tag": { zh: "AI 四合一商用清潔", en: "AI-powered 4-in-1 cleaning" },
   "pudu.cc1.desc": {
-    zh: "商用掃地洗地方案，適合商場、寫字樓、醫院走廊等需要持續地面保潔的公共空間，減少人手重複勞動。",
-    en: "Commercial sweep-and-scrub solution for malls, offices and hospital corridors that need continuous floor care with less manual labour.",
+    zh: "PUDU CC1 Pro 是 AI 驅動的「Always-on」四合一商用清潔機械人：掃、吸、塵推、洗地一機完成，融合 VSLAM+ 與 LiDAR 導航，支援 AI 點掃、清潔效果實時偵測與選配自動補排水／回充，單次可覆蓋約 5,000–8,000 m²，適合商場、寫字樓、醫院等高流量場景。",
+    en: "PUDU CC1 Pro is an AI-powered “Always-on” 4-in-1 commercial cleaning robot—sweeping, vacuuming, dust mopping and scrubbing in one unit. VSLAM+ with LiDAR, AI spot scrubbing, real-time cleaning detection, and optional auto charge/water dock cover about 5,000–8,000 m² per operation for malls, offices and hospitals.",
   },
-  "pudu.cc1.c1": { zh: "掃地洗地", en: "Sweep & scrub" },
-  "pudu.cc1.c2": { zh: "公共空間", en: "Public spaces" },
-  "pudu.cc1.c3": { zh: "減省人手", en: "Labour saving" },
+  "pudu.cc1.c1": { zh: "AI 點掃・效果偵測", en: "AI spot & detection" },
+  "pudu.cc1.c2": { zh: "VSLAM+ 導航", en: "VSLAM+ navigation" },
+  "pudu.cc1.c3": { zh: "自動回充補水", en: "Auto charge & water" },
 
-  "pudu.mt1.tag": { zh: "大型垃圾處理", en: "Large waste cleaning" },
+  "pudu.mt1.tag": { zh: "AI 戶外／半戶外掃吸", en: "AI outdoor / semi-outdoor sweeping" },
   "pudu.mt1.desc": {
-    zh: "針對大型垃圾／大件廢棄物處理場景，協助商業或後勤空間處理體積較大的垃圾收集與搬運需求。",
-    en: "Built for large / bulk waste scenarios—helping commercial and back-of-house spaces collect and move larger refuse.",
+    zh: "PUDU MT1 Max 是第三代 MT1 系列 AI 掃吸機械人，面向戶外與半戶外大面積場景。配備 3D LiDAR 多感測融合、IP54 防護、35 L 垃圾箱與約 70 cm 清潔寬度，覆蓋清潔最高約 2,200 m²/h，適合倉庫、工廠、物流中心與停車場等環境。",
+    en: "PUDU MT1 Max is the 3rd-generation MT1 AI sweeper for outdoor and semi-outdoor large floors. With 3D LiDAR multi-sensor fusion, IP54 sealing, a 35 L bin and ~70 cm cleaning width, cover cleaning reaches up to about 2,200 m²/h—built for warehouses, factories, logistics centres and car parks.",
   },
-  "pudu.mt1.c1": { zh: "大型垃圾", en: "Large waste" },
-  "pudu.mt1.c2": { zh: "後勤場景", en: "Back-of-house" },
-  "pudu.mt1.c3": { zh: "商業空間", en: "Commercial spaces" },
+  "pudu.mt1.c1": { zh: "3D LiDAR 感知", en: "3D LiDAR perception" },
+  "pudu.mt1.c2": { zh: "IP54 戶外半戶外", en: "IP54 outdoor ready" },
+  "pudu.mt1.c3": { zh: "最高約 2,200 m²/h", en: "Up to ~2,200 m²/h" },
+
+  "pudu.t300.tag": { zh: "工業配送機械人", en: "Industrial delivery · 300 kg" },
+  "pudu.t300.desc": {
+    zh: "T300 工業配送機械人，負載能力約 300 kg，適合工廠、倉儲與產線物料搬運，在複雜動線中穩定運送。",
+    en: "T300 industrial delivery robot with about 300 kg payload—built for factories, warehouses and line-side material transport on complex routes.",
+  },
+  "pudu.t300.c1": { zh: "工業物流", en: "Industrial logistics" },
+  "pudu.t300.c2": { zh: "約 300 kg 負載", en: "Approx. 300 kg payload" },
+  "pudu.t300.c3": { zh: "產線倉儲", en: "Production & warehouse" },
+
+  "pudu.t600.tag": { zh: "工業重載配送", en: "Heavy-payload industrial delivery · 600 kg" },
+  "pudu.t600.desc": {
+    zh: "T600 系列工業重載配送機械人，負載能力約 600 kg，面向高密度、高負載的工業與物流場景。",
+    en: "T600 series heavy-payload industrial delivery robot with about 600 kg capacity for high-density, high-load industrial and logistics sites.",
+  },
+  "pudu.t600.c1": { zh: "重載配送", en: "Heavy payload" },
+  "pudu.t600.c2": { zh: "約 600 kg 負載", en: "Approx. 600 kg payload" },
+  "pudu.t600.c3": { zh: "高密度場景", en: "High-density sites" },
 
   "pudu.sh1.tag": { zh: "智慧直立式洗地機", en: "Upright scrubber" },
   "pudu.sh1.desc": {

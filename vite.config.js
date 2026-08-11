@@ -30,6 +30,8 @@ const pages = [
   'pudubot',
   'bellabot',
   'flashbot',
+  't300',
+  't600',
   'cc1',
   'mt1',
   'sh1',
