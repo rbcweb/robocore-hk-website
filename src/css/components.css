@@ -223,6 +223,17 @@ body[data-page="index"] main > .section:not(:last-of-type)::after {
   flex-direction: column;
 }
 
+a.card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 /* Hover: slight lift only — no green border (avoids clash with is-current highlight) */
 .card:hover {
   transform: translateY(-3px);
@@ -599,6 +610,61 @@ body[data-page="index"] main > .section:not(:last-of-type)::after {
   max-height: 480px;
   width: auto;
   object-fit: contain;
+}
+
+/* Stacked product detail — large centered media, copy below (same column) */
+.detail-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  /* keep stack inset from container edges */
+  width: min(100%, 1000px);
+  margin-inline: auto;
+}
+
+.detail-stack-media {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 50% 30%, rgba(29, 240, 162, 0.08), transparent 55%),
+    var(--bg-card);
+  padding: 1rem 1.15rem;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.detail-stack-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(68vh, 640px);
+  object-fit: contain;
+  border-radius: var(--radius);
+}
+
+/* Left-aligned type, but column is centered under the image */
+.detail-stack-copy {
+  width: 100%;
+  max-width: 36rem;
+  margin-inline: 0;
+  align-self: flex-start;
+  text-align: left;
+  padding-inline: 0.15rem;
+}
+
+.detail-stack-copy p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.detail-stack-copy .hero-actions {
+  margin-top: 1.5rem;
+  justify-content: flex-start;
 }
 
 /* ——— temi-style product page ——— */
@@ -1139,6 +1205,124 @@ a.news-card:hover {
 
 .news-source-block .btn {
   margin-top: 0.25rem;
+}
+
+/* Solution detail pages */
+.solution-detail {
+  padding: 3rem 0 2rem;
+}
+
+.solution-detail-inner {
+  max-width: 42rem;
+}
+
+.solution-detail-icon {
+  margin: 0.25rem 0 1.25rem;
+}
+
+.solution-detail h1 {
+  font-size: clamp(1.65rem, 3.5vw, 2.35rem);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 0 0 1rem;
+}
+
+.solution-lead {
+  font-size: 1.08rem;
+  color: var(--text-soft);
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+}
+
+.solution-body {
+  display: grid;
+  gap: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+.solution-body p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.solution-list {
+  margin: 0;
+  padding: 0 0 0 1.15rem;
+  display: grid;
+  gap: 0.55rem;
+  color: var(--text-soft);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.solution-list li::marker {
+  color: var(--accent);
+}
+
+.solution-figure {
+  margin: 0 0 2rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  max-width: 22rem;
+}
+
+.solution-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.solution-figure figcaption {
+  padding: 0.65rem 1rem 0.85rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  border-top: 1px solid var(--border);
+}
+
+.solution-video {
+  margin: 0 0 2.25rem;
+}
+
+.solution-video-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 0.85rem;
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+  box-shadow: var(--shadow-soft);
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.solution-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
 }
 
 .news-source-block .btn + .btn {

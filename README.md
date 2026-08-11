@@ -48,6 +48,14 @@ npm run preview
 
 Build：`vite build` 後 `scripts/clean-urls.mjs` 把 `foo.html` → `foo/index.html`，並保留 `foo.html` 短 redirect 兼容舊連結。
 
+## 營運／決策文件（集中）
+
+| 檔案 | 用途 |
+|------|------|
+| [`PROJECT_MEMORY.md`](PROJECT_MEMORY.md) | 專案總記憶 |
+| [`docs/ops/`](docs/ops/) | design、deploy、domain 詳情 |
+| [`docs/WIX_REDIRECT_SETUP.md`](docs/WIX_REDIRECT_SETUP.md) | 舊 Wix redirect 說明 |
+
 ## 聯絡
 
 - Email: info@robocore.ai  

@@ -116,13 +116,19 @@
 ⚠️ 未獲用戶批准前 **唔好** 自動 push。  
 ⚠️ 新功能／新頁必須套用 design foundation + clean URL + `robocore.ai`。
 
-## 相關檔案
+## 相關檔案（全部以本專案目錄為準）
+
+**專案路徑：** `/Users/sang/Documents/Robocore HK website`
 
 | 用途 | 路徑 |
 |------|------|
+| 本記憶（總覽） | `PROJECT_MEMORY.md` |
+| 設計基準 | `docs/ops/design-system.md` |
+| Deploy 流程 | `docs/ops/deploy-workflow.md` |
+| Domain／DNS | `docs/ops/domain-live.md` |
+| 營運文件索引 | `docs/ops/README.md` |
 | Deploy workflow | `.github/workflows/deploy.yml`（`BASE_PATH=/`） |
 | Clean URL script | `scripts/clean-urls.mjs` |
 | Path helpers | `src/js/paths.js` |
-| Wix redirect 舊文件 | `docs/WIX_REDIRECT_SETUP.md`（域名已直指 GitHub 後，redirect 非主路徑） |
-| 本記憶 | `PROJECT_MEMORY.md` |
-| Grok 跨 session | `~/.grok/memory/user/robocore-design-system.md`、`robocore-deploy-workflow.md`、`robocore-domain-live.md` |
+| Wix redirect 舊文件 | `docs/WIX_REDIRECT_SETUP.md`（域名已直指 GitHub 後非主路徑） |
+| Grok 跨 session | `~/.grok/memory/user/robocore-*.md` **只係 pointer** → 指向 `docs/ops/`（唔再維護第二份全文） |

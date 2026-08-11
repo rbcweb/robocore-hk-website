@@ -89,6 +89,54 @@ const PRODUCT_SECTION_SLUGS = new Set([
   "puductor",
 ]);
 
+/** Solutions mega — same structure as products (groups ≈ brands) */
+const SOLUTION_NAV = {
+  groups: [
+    {
+      labelKey: "nav.sol.group.service",
+      overview: "solutions",
+      overviewKey: "nav.exploreSolutions",
+      items: [
+        { slug: "solution-healthcare", titleKey: "sol.healthcare.title", typeKey: "nav.sol.type.healthcare" },
+        { slug: "solution-hospitality", titleKey: "sol.hotel.title", typeKey: "nav.sol.type.hotel" },
+        { slug: "solution-clinic", titleKey: "sol.clinic.title", typeKey: "nav.sol.type.clinic" },
+        { slug: "solution-building", titleKey: "sol.building.title", typeKey: "nav.sol.type.building" },
+        { slug: "solution-stem", titleKey: "sol.stem.title", typeKey: "nav.sol.type.stem" },
+        { slug: "solution-iot", titleKey: "sol.iot.title", typeKey: "nav.sol.type.iot" },
+      ],
+    },
+    {
+      labelKey: "nav.sol.group.commerce",
+      overview: "solutions",
+      overviewKey: "nav.exploreSolutions",
+      items: [
+        { slug: "solution-fb", titleKey: "sol.fb.title", typeKey: "nav.sol.type.fb" },
+        { slug: "solution-mall", titleKey: "sol.mall.title", typeKey: "nav.sol.type.mall" },
+        { slug: "solution-retail", titleKey: "sol.retail.title", typeKey: "nav.sol.type.retail" },
+        { slug: "solution-expo", titleKey: "sol.expo.title", typeKey: "nav.sol.type.expo" },
+        { slug: "solution-entertainment", titleKey: "sol.ent.title", typeKey: "nav.sol.type.ent" },
+        { slug: "solution-si", titleKey: "sol.si.title", typeKey: "nav.sol.type.si" },
+      ],
+    },
+  ],
+};
+
+const SOLUTION_SECTION_SLUGS = new Set([
+  "solutions",
+  "solution-healthcare",
+  "solution-hospitality",
+  "solution-stem",
+  "solution-building",
+  "solution-fb",
+  "solution-mall",
+  "solution-clinic",
+  "solution-iot",
+  "solution-retail",
+  "solution-expo",
+  "solution-entertainment",
+  "solution-si",
+]);
+
 function isActive(current, href) {
   const [pathPart, hash] = String(href).split("#");
   const hrefId = hrefToPageId(pathPart);
@@ -143,7 +191,7 @@ function productsMega(current) {
   const productsActive = PRODUCT_SECTION_SLUGS.has(cur) ? " is-active" : "";
 
   return `
-    <div class="nav-item nav-item-mega" data-mega>
+    <div class="nav-item nav-item-mega" data-mega="products">
       <button
         type="button"
         class="nav-link nav-mega-trigger${productsActive}"
@@ -169,6 +217,52 @@ function productsMega(current) {
     </div>`;
 }
 
+function solutionsMega(current) {
+  const cur = normalizePageId(current);
+  const cols = SOLUTION_NAV.groups
+    .map((group) => {
+      const overviewHref = pageHref(group.overview);
+      const items = group.items
+        .map((item) => {
+          const href = pageHref(item.slug);
+          const active = isActive(cur, href) ? " is-active" : "";
+          return `<a class="mega-model${active}" href="${href}"><span class="mega-model-name" data-i18n="${item.titleKey}"></span><span class="mega-model-type" data-i18n="${item.typeKey}"></span></a>`;
+        })
+        .join("");
+      return `
+        <div class="mega-col">
+          <a class="mega-brand" href="${overviewHref}" data-i18n="${group.labelKey}"></a>
+          <a class="mega-overview" href="${overviewHref}" data-i18n="${group.overviewKey}"></a>
+          <div class="mega-models">${items}</div>
+        </div>`;
+    })
+    .join("");
+
+  const solutionsActive = SOLUTION_SECTION_SLUGS.has(cur) ? " is-active" : "";
+
+  return `
+    <div class="nav-item nav-item-mega" data-mega="solutions">
+      <button
+        type="button"
+        class="nav-link nav-mega-trigger${solutionsActive}"
+        aria-expanded="false"
+        aria-controls="solutions-mega"
+        data-mega-trigger
+      >
+        <span data-i18n="nav.solutions"></span>
+        <svg class="nav-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mega-panel" id="solutions-mega" data-mega-panel hidden>
+        <div class="mega-inner">
+          <a class="mega-all" href="${pageHref("solutions")}" data-i18n="nav.allSolutions"></a>
+          <div class="mega-grid">
+            ${cols}
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
 export function renderHeader(current = "index") {
   const cur = normalizePageId(current);
   const newsCurrent = cur.startsWith("news") ? "news" : cur;
@@ -181,7 +275,7 @@ export function renderHeader(current = "index") {
       <nav class="nav" id="primary-nav" aria-label="Primary">
         ${productsMega(cur)}
         ${navLink("news", "nav.news", newsCurrent)}
-        ${navLink("solutions", "nav.solutions", cur)}
+        ${solutionsMega(cur)}
         ${navLink("joinus", "nav.join", cur)}
         ${navLink("contactus", "nav.contact", cur)}
       </nav>
