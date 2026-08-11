@@ -125,11 +125,11 @@
   box-shadow: none;
 }
 
-/* Solutions mega sits further right — keep panel on-screen */
+/* Solutions mega — center under trigger (not right-anchored, which looks skewed left) */
 .nav-item-mega[data-mega="solutions"] .mega-panel {
-  left: auto;
-  right: 0;
-  transform: none;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
   width: min(720px, calc(100vw - 2rem));
 }
 
@@ -275,7 +275,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
+  color: var(--text); /* white — section label only; ZPINE / Lift chips unchanged */
   font-weight: 600;
 }
 

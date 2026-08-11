@@ -20,7 +20,6 @@ export const dict = {
   "nav.type.service": { zh: "多功能智能大使", en: "Multi-purpose smart ambassador" },
   "nav.type.chassis": { zh: "導航底盤", en: "Navigation chassis" },
   "nav.type.delivery": { zh: "配送機械人", en: "Delivery robot" },
-  "nav.type.quadDelivery": { zh: "開放式托盤配送", en: "Open-tray delivery" },
   "nav.type.patrol": { zh: "巡邏與巡檢", en: "Patrol & inspection" },
   "nav.type.ad": { zh: "流動廣告", en: "Mobile advertising" },
   "nav.type.foodDelivery": { zh: "開放式托盤配送", en: "Open-tray delivery" },
@@ -165,7 +164,7 @@ export const dict = {
     zh: "適用餐廳、美食廣場與零售的食品飲料與托盤配送，平板、語音與 temi Center 控制。",
     en: "Ideal for F&B and open-tray delivery in restaurants, food courts and retail—tablet, voice and temi Center control.",
   },
-  "prod.gopro.tag": { zh: "四門配送機械人", en: "Quad-Door Delivery Robot" },
+  "prod.gopro.tag": { zh: "四門配送", en: "Quad-door delivery" },
   "prod.gopro.desc": {
     zh: "temi GO 高級四門版本，跨樓層配送；獨立電門與可拆隔板，點對點自主運送。",
     en: "Premium four-door temi GO for multi-floor delivery—independent doors, removable partitions, A-to-B autonomy.",
