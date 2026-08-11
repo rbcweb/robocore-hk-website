@@ -99,9 +99,9 @@ export const dict = {
     zh: "除服務與配送外，我們亦提供巡邏巡檢、流動廣告、樓宇配送與通用導航／平台模組，並支援按需求定制的硬體與軟體開發，覆蓋餐飲、酒店、醫療、零售與物業等行業。",
     en: "Beyond service and delivery, we also provide patrol and inspection, mobile advertising, building logistics and navigation platforms—plus custom hardware and software—across F&B, hospitality, healthcare, retail and property.",
   },
-  "home.stat1": { zh: "國家／地區", en: "Countries & Regions" },
-  "home.stat2": { zh: "行業方案", en: "Industry Solutions" },
-  "home.stat3": { zh: "總部香港", en: "HQ Hong Kong" },
+  "home.stat1": { zh: "國家及地區", en: "Countries & regions" },
+  "home.stat2": { zh: "機械人產品", en: "Robot models" },
+  "home.stat3": { zh: "開放平台", en: "Open platform" },
   "home.pillarsTitle": { zh: "我們能為您做什麼", en: "What We Deliver" },
   "home.pillar1Title": { zh: "綜合智能解決方案", en: "Comprehensive Solutions" },
   "home.pillar1Desc": {
