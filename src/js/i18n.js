@@ -25,16 +25,16 @@ export const dict = {
     en: "AI in Motion, enterprise-grade SDK",
   },
   "nav.type.chassis": {
-    zh: "可客製機械人，自主導航",
-    en: "Customizable robotics, autonomous navigation",
+    zh: "可客製，自主導航",
+    en: "Customizable, autonomous navigation",
   },
   "nav.type.delivery": {
     zh: "流暢開放式托盤服務",
     en: "Seamless open-tray service",
   },
   "nav.type.gopro": {
-    zh: "四門跨層服務，支援電梯",
-    en: "Quad-door multi-floor service, elevator-enabled",
+    zh: "四門服務，支援電梯",
+    en: "Quad-door service, elevator-enabled",
   },
   "nav.type.patrol": {
     zh: "自主安防與巡檢",
@@ -131,8 +131,8 @@ export const dict = {
   },
   "home.pillar2Title": { zh: "temi 系列", en: "temi Series" },
   "home.pillar2Desc": {
-    zh: "temi V3、temi GO、temi GO PRO、Blackjack、Fourcast 分別提供配送、巡邏及廣告等服務。",
-    en: "temi V3, temi GO, temi GO PRO, Blackjack and Fourcast provide delivery, patrol and advertising services.",
+    zh: "temi V3、Platform P50、temi GO、temi GO PRO、Blackjack、Fourcast 分別提供配送、巡邏及廣告等服務。",
+    en: "temi V3, Platform P50, temi GO, temi GO PRO, Blackjack and Fourcast provide delivery, patrol and advertising services.",
   },
   "home.pillar3Title": { zh: "Pudu 系列", en: "Pudu Series" },
   "home.pillar3Desc": {
@@ -236,10 +236,10 @@ export const dict = {
   "temiv3.a7": { zh: "Temi 貼紙", en: "Temi stickers" },
   "temiv3.a8": { zh: "專屬軟件定制", en: "Custom software development" },
 
-  "platform.title": { zh: "temi Platform", en: "temi Platform" },
+  "platform.title": { zh: "Platform P50", en: "Platform P50" },
   "platform.body": {
-    zh: "Temi Platform 是 temi 家族的機械人底盤，配備完全開放的 SDK 平台，可讓您為業務編寫自己的應用程式。自由組合設備或配件以實現客製化解決方案。由 temi Center 平台支援並與 temi 應用程式相容。",
-    en: "Temi Platform is the robotic chassis of the temi family with a fully open SDK. Freely combine devices or accessories for custom solutions. Supported by temi Center and compatible with the temi app.",
+    zh: "Platform P50 是 temi 家族的機械人底盤，配備完全開放的 SDK 平台，可讓您為業務編寫自己的應用程式。自由組合設備或配件以實現客製化解決方案。由 temi Center 平台支援並與 temi 應用程式相容。",
+    en: "Platform P50 is the robotic chassis of the temi family with a fully open SDK. Freely combine devices or accessories for custom solutions. Supported by temi Center and compatible with the temi app.",
   },
 
   "go.title": { zh: "temi GO", en: "temi GO" },

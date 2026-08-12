@@ -37,7 +37,7 @@ const PRODUCT_NAV = {
       overviewKey: "nav.exploreSeries",
       models: [
         { name: "temi v3", slug: "temiv3", typeKey: "nav.type.service" },
-        { name: "temi Platform", slug: "temiplatform", typeKey: "nav.type.chassis" },
+        { name: "Platform P50", slug: "temiplatform", typeKey: "nav.type.chassis" },
         { name: "temi GO", slug: "temigo", typeKey: "nav.type.delivery" },
         { name: "temi GO PRO", slug: "temigopro", typeKey: "nav.type.gopro" },
         { name: "Blackjack", slug: "blackjack", typeKey: "nav.type.patrol" },

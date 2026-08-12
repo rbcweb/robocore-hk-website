@@ -334,9 +334,7 @@ a.card:focus-visible {
   overflow: hidden;
   margin: -0.25rem -0.25rem 1rem;
   aspect-ratio: 4 / 3;
-  background:
-    radial-gradient(circle at 50% 40%, rgba(29, 240, 162, 0.12), transparent 55%),
-    var(--bg-card);
+  background: #000;
 }
 
 .card-media img {
@@ -427,11 +425,22 @@ a.card:focus-visible {
 
 .pudu-media {
   aspect-ratio: 4 / 3;
-  background:
-    radial-gradient(circle at 50% 40%, rgba(29, 240, 162, 0.12), transparent 55%),
-    var(--bg-card);
+  background: #000;
   margin: 0 0 1rem;
   border-radius: calc(var(--radius) - 4px);
+}
+
+/* Match temi studio product art (#1b1c1e) — gray fills the whole frame */
+.temi-media,
+.card-media.temi-media {
+  aspect-ratio: 4 / 3;
+  background: #1b1c1e;
+  margin: 0 0 1rem;
+  border-radius: calc(var(--radius) - 4px);
+}
+
+.card-media.temi-media {
+  margin: -0.25rem -0.25rem 1rem;
 }
 
 .pudu-media img {
@@ -442,8 +451,24 @@ a.card:focus-visible {
   transition: transform 0.5s var(--ease);
 }
 
+/* Full-bleed gray art: no padding so studio gray reaches frame edges */
+.temi-media img,
+.card-media.temi-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  padding: 0;
+  background: #1b1c1e;
+  transition: transform 0.5s var(--ease);
+}
+
 .card:hover .pudu-media img {
   transform: scale(1.04);
+}
+
+.card:hover .temi-media img {
+  transform: scale(1.03);
 }
 
 .product-tile {
@@ -452,7 +477,11 @@ a.card:focus-visible {
   overflow: hidden;
   border: 1px solid var(--border);
   min-height: 320px;
-  background: var(--bg-card);
+  background: #000;
+}
+
+.product-tile--temi {
+  background: #1b1c1e;
 }
 
 .product-tile img {
@@ -460,8 +489,14 @@ a.card:focus-visible {
   height: 100%;
   object-fit: contain;
   padding: 1.5rem;
-  background: radial-gradient(circle at 50% 30%, rgba(29, 240, 162, 0.08), transparent 55%),
-    var(--bg-card);
+  background: transparent;
+}
+
+.product-tile--temi img {
+  object-fit: cover;
+  object-position: center;
+  padding: 0;
+  background: #1b1c1e;
 }
 
 .product-tile .caption {
@@ -743,14 +778,21 @@ a.card:focus-visible {
   margin: 0 0 1.5rem;
 }
 
+/* More air between hero copy (lead / chips) and CTA buttons */
+.product-hero-copy .product-lead {
+  margin: 0 0 3.5rem;
+}
+
 .product-hero-copy .chip-row {
-  margin: 0 0 1.75rem;
+  margin: 0 0 3.5rem;
 }
 
 .product-hero-copy .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 1rem 1.25rem;
+  margin-top: 0;
 }
 
 .product-stage {
@@ -760,37 +802,43 @@ a.card:focus-visible {
   place-items: center;
   border-radius: calc(var(--radius-lg) + 4px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background:
-    radial-gradient(circle at 50% 42%, rgba(29, 240, 162, 0.16), transparent 42%),
-    radial-gradient(circle at 50% 100%, rgba(17, 109, 255, 0.12), transparent 50%),
-    linear-gradient(165deg, #1e2024 0%, #16171a 55%, #121316 100%);
+  background: #000;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
     0 30px 80px rgba(0, 0, 0, 0.45);
   overflow: hidden;
 }
 
-.product-stage::before {
-  content: "";
-  position: absolute;
-  inset: 12% 18% auto;
-  height: 55%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(29, 240, 162, 0.2), transparent 70%);
-  filter: blur(8px);
-  pointer-events: none;
+/* temi studio art is charcoal gray — stage + image fill as one surface */
+body[data-page="temiv3"] .product-stage,
+body[data-page="temiplatform"] .product-stage,
+body[data-page="temigo"] .product-stage,
+body[data-page="temigopro"] .product-stage,
+body[data-page="blackjack"] .product-stage,
+body[data-page="fourcast"] .product-stage {
+  background: #1b1c1e;
 }
 
+body[data-page="temiv3"] .product-stage img,
+body[data-page="temiplatform"] .product-stage img,
+body[data-page="temigo"] .product-stage img,
+body[data-page="temigopro"] .product-stage img,
+body[data-page="blackjack"] .product-stage img,
+body[data-page="fourcast"] .product-stage img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  max-width: none;
+  /* contain + matching #1b1c1e so studio gray fills the stage without cropping */
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+  background: #1b1c1e;
+}
+
+.product-stage::before,
 .product-stage::after {
-  content: "";
-  position: absolute;
-  left: 18%;
-  right: 18%;
-  bottom: 12%;
-  height: 18%;
-  border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.55), transparent 70%);
-  pointer-events: none;
+  content: none;
 }
 
 .product-stage img,
@@ -807,6 +855,15 @@ a.card:focus-visible {
 .product-stage:hover .product-stage-main,
 .product-stage:hover > img:not(.product-thumb img) {
   transform: translateY(-6px) scale(1.02);
+}
+
+body[data-page="temiv3"] .product-stage:hover > img,
+body[data-page="temiplatform"] .product-stage:hover > img,
+body[data-page="temigo"] .product-stage:hover > img,
+body[data-page="temigopro"] .product-stage:hover > img,
+body[data-page="blackjack"] .product-stage:hover > img,
+body[data-page="fourcast"] .product-stage:hover > img {
+  transform: scale(1.02);
 }
 
 /* Multi-angle gallery under product stage */
@@ -935,6 +992,16 @@ a.card:focus-visible {
 
   .product-stage img {
     max-height: 320px;
+  }
+
+  body[data-page="temiv3"] .product-stage img,
+  body[data-page="temiplatform"] .product-stage img,
+  body[data-page="temigo"] .product-stage img,
+  body[data-page="temigopro"] .product-stage img,
+  body[data-page="blackjack"] .product-stage img,
+  body[data-page="fourcast"] .product-stage img {
+    max-height: none;
+    height: 100%;
   }
 }
 
