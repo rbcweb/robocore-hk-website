@@ -545,6 +545,15 @@ main {
     padding: 0;
   }
 
+  /* Beat the desktop Solutions-specific left/transform so mobile stays full-width */
+  .nav-item-mega[data-mega="solutions"] .mega-panel {
+    position: static;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+  }
+
   .mega-inner {
     border-radius: 12px;
     box-shadow: none;
